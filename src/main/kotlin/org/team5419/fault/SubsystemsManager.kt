@@ -1,5 +1,7 @@
 import org.team5419.fault.Subsystem
 
+class SubsystemException(message: String) : Exception(message)
+
 public class SubsystemsManager(
     vararg subsystems: Subsystem
 ) {
@@ -35,13 +37,13 @@ public class SubsystemsManager(
         return mSubsystems
     }
 
-    public inline fun <reified SubsystemType : Subsystem> getSubsystem(): SubsystemType? {
+    public inline fun <reified SubsystemType : Subsystem> getSubsystem(): SubsystemType {
         for (subsystem in getSubsystems()) {
             if (subsystem is SubsystemType) {
                 return subsystem
             }
         }
 
-        return null
+        throw SubsystemException("The requested subsystem does not exsist")
     }
 }
