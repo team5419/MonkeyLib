@@ -4,7 +4,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode
 import com.ctre.phoenix.motorcontrol.DemandType
 import com.ctre.phoenix.motorcontrol.NeutralMode
 
-public class MockLazyTalonSRX(deviceNumber: Int) : Talon {
+public class MockLazyVictorSPX(deviceNumber: Int) : Victor {
 
     private var mMode: ControlMode? = null
     private var mValue: Double? = null

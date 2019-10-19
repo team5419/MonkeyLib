@@ -5,7 +5,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode
 import com.ctre.phoenix.motorcontrol.DemandType
 import com.ctre.phoenix.motorcontrol.NeutralMode
 
-class LazyTalonSRX(deviceNumber: Int) : TalonSRX(deviceNumber) {
+class LazyTalonSRX(deviceNumber: Int) : TalonSRX(deviceNumber), Talon {
 
     private var lastSet = Double.NaN
     private var lastSecondarySet = Double.NaN
