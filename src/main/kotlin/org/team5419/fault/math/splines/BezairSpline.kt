@@ -4,7 +4,7 @@ import org.team5419.fault.math.geometry.Vector2
 import org.team5419.fault.math.geometry.Rotation2d
 import org.team5419.fault.math.geometry.Pose2d
 
-class BerzairCubicSpline(p0: Vector2, p1: Vector2, p2: Vector2, p3: Vector2) : Spline() {
+class CubicBezierSpline(p0: Vector2, p1: Vector2, p2: Vector2, p3: Vector2) : Spline() {
     private val p0: Vector2
     private val p1: Vector2
     private val p2: Vector2
