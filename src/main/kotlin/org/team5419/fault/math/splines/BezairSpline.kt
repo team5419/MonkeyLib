@@ -5,10 +5,10 @@ import org.team5419.fault.math.geometry.Rotation2d
 import org.team5419.fault.math.geometry.Pose2d
 
 class CubicBezierSpline(p0: Vector2, p1: Vector2, p2: Vector2, p3: Vector2) : Spline() {
-    private val p0: Vector2
-    private val p1: Vector2
-    private val p2: Vector2
-    private val p3: Vector2
+    public val p0: Vector2
+    public val p1: Vector2
+    public val p2: Vector2
+    public val p3: Vector2
 
     init{
         this.p0 = p0
@@ -32,9 +32,17 @@ class CubicBezierSpline(p0: Vector2, p1: Vector2, p2: Vector2, p3: Vector2) : Sp
     }
 
     override fun getCurvature(t: Double): Double = 0.0
-
     override fun getDCurvature(t: Double) = 0.0
-
     override fun getVelocity(t: Double) = 0.0
+
+    fun isInterloped(other: CubicBezierSpline): Boolean {
+        val slope = Math.atan(this.p3.y - this.p2.y, this.p3.x - this.p2.x)
+        return (
+          this.p3.equals(other.p3) &&
+          Math.atan(other.p1.y - this.p2.y, other.p1.x - this.p2.x) == slope &&
+          Math.atan(other.p1.y - this.p3.y, other.p1.x - this.p3.x) == slope &&
+        )
+
+      }
 
 }

@@ -4,6 +4,8 @@ import org.team5419.fault.math.splines.Spline
 import org.team5419.fault.math.splines.CubicBezierSpline
 import org.team5419.fault.geometry.Vector2
 import org.team5419.fault.geometry.Rotation2d
+import org.team5419.fault.util.Oof
+
 
 public class InterlopedCubicBezierSplines: Spline(vararg splines: CubicBezierSpline) {
     private val splines: Array<CubicBezierSpline>
@@ -12,7 +14,10 @@ public class InterlopedCubicBezierSplines: Spline(vararg splines: CubicBezierSpl
 
     init{
         this.splines = splines
-        //TODO confirm interlopation
+        for(i in 1..this.numSplines-1){
+          if(!this.splines.get(i-1).isInterloped(this.splines.get(i)))
+            throw Oof("Splines not interloped")
+        }
     }
 
     private fun getSpline(t: Double): CubicBezierSpline = this.splines.get( (t * this.numSplines).toInt() )
