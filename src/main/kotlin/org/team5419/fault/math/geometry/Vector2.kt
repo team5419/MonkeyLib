@@ -48,6 +48,14 @@ class Vector2(val x: Double, val y: Double) : Geometric<Vector2> {
         x * (other.x - this.x) + this.x, x * (other.y - this.y) + this.y
     )
 
+    fun isInline(point: Vector2, vararg points: Vector2){
+        val slope = (point.y - this.y) / (point.x - this.x)
+        for(p in points) {
+            if((p.y - this.y) / (p.x - this.x) != slope) return false
+        }
+        return true
+    }
+
     @Suppress("ReturnCount")
     override fun interpolate(other: Vector2, x: Double): Vector2 {
         if (x <= 0) return Vector2(this)

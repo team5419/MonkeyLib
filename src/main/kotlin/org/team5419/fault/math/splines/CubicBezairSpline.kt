@@ -4,7 +4,7 @@ import org.team5419.fault.math.geometry.Vector2
 import org.team5419.fault.math.geometry.Rotation2d
 import org.team5419.fault.math.geometry.Pose2d
 
-class BerzairCubicSpline(p0: Vector2, p1: Vector2, p2: Vector2, p3: Vector2) : Spline() {
+public class CubicBezairSpline(p0: Vector2, p1: Vector2, p2: Vector2, p3: Vector2) : Spline() {
     private val p0: Vector2
     private val p1: Vector2
     private val p2: Vector2
@@ -26,13 +26,9 @@ class BerzairCubicSpline(p0: Vector2, p1: Vector2, p2: Vector2, p3: Vector2) : S
 
     // B(t) = (1 - t)^3P0 + 3(1 - t)^2tP1 + 3(1 - t)t^2P2 + t^3P3
     override public fun getPoint(t: Double) = Vector2(x(t), y(t))
-
     // B'(t) = 3(1- t)^2(P1 - P0) + 6(1 - t)t(P2 - P1) + 3t^2(P3 - P2)
     override public fun getHeading(t: Double) = Rotation2d(dx(t), dy(t), true)
-
-    override fun getCurvature(t: Double): Double = ( (dx * ddy) - (dy * ddx) ) / Math.pow(Math.pow(dx, 2) + Math.pow(dy, 2), 3.0/2.0)
-
+    override fun getCurvature(t: Double): Double = ( (dx(t) * ddy(t)) - (dy(t) * ddx(t)) ) / Math.pow(Math.pow(dx(t), 2.0) + Math.pow(dy(t), 2.0), 3.0/2.0)
     override fun getDCurvature(t: Double) = 0.0
-
     override fun getVelocity(t: Double) = 0.0
 }
