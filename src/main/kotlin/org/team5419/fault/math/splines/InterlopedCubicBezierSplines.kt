@@ -7,11 +7,11 @@ import org.team5419.fault.math.geometry.Rotation2d
 import org.team5419.fault.util.Oof
 
 
-public class InterlopedCubicBezierSplines(vararg splines: CubicBezierSpline): Spline() {
+public class InterlopedCubicBezierSplines(): Spline() {
     private val splines: ArrayList<CubicBezierSpline> = ArrayList<CubicBezierSpline>()
     private val points: ArrayList<Vector2> = ArrayList<Vector2>()
 
-    /*constructor(vararg points: Vector2) : this() {
+    constructor(vararg points: Vector2) : this() {
 		require(points.count() >= 4 && (points.count()-1) % 3 == 0) { "Insufficant number of points" }
 		for(point in points) this.points.add(point)
         for(i in 3..points.count() step 3){
@@ -22,9 +22,9 @@ public class InterlopedCubicBezierSplines(vararg splines: CubicBezierSpline): Sp
 				this.points.get(i)
     		))
     	}
-	}*/
+	}
 
-    init{
+    constructor (vararg splines: CubicBezierSpline): this() {
 		require(splines.count() > 0) {"Need at least one spline"}
 		var lastAnchor: Vector2 = this.splines.get(0).p0
 		this.points.add(lastAnchor)
