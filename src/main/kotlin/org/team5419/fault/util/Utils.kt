@@ -97,10 +97,20 @@ object Utils {
         return (circumference * ticks) / (encoderTicksPerRotation * reduction)
     }
 
+    /**
+     * Converts the talon angle into degrees.
+     * @param gyroTicksPerRotation The amount of ticks every rotation of the motor.
+     * @param ticks The amount of ticks.
+     */
     public fun talonAngleToDegrees(gyroTicksPerRotation: Int, ticks: Int): Double {
         return (360.0 / gyroTicksPerRotation) * ticks
     }
 
+    /**
+     * Converts the degrees into the talon angle.
+     * @param gyroTicksPerRotation The amount of ticks every rotation of the motor.
+     * @param degrees The amount of degrees.
+     */
     public fun degreesToTalonAngle(gyroTicksPerRotation: Int, degrees: Double): Int {
         return ((gyroTicksPerRotation / 360.0) * degrees).toInt()
     }
