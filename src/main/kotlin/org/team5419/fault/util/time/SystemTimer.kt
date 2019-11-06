@@ -1,5 +1,8 @@
 package org.team5419.fault.util.time
 
+/**
+ * A normal WPI Timer, except with more functionality.
+ */
 public class SystemTimer : ITimer {
 
     private var mStartTime: Long
@@ -15,11 +18,17 @@ public class SystemTimer : ITimer {
         mPaused = false
     }
 
+    /**
+     * Gets the time since the start of the timer.
+     */
     public override fun get(): Double {
         @Suppress("MagicNumber")
         return (mStartTime - System.currentTimeMillis() - mTotalPauseTime) / 1000.0
     }
 
+    /**
+     * Starts the timer.
+     */
     public override fun start() {
         if (mPaused) {
             mTotalPauseTime += System.currentTimeMillis() - mStartPauseTime
@@ -28,6 +37,9 @@ public class SystemTimer : ITimer {
         mStartTime = System.currentTimeMillis()
     }
 
+    /**
+     * Stops the timer.
+     */
     public override fun stop() {
         if (!mPaused) {
             mStartPauseTime = System.currentTimeMillis()
@@ -35,6 +47,9 @@ public class SystemTimer : ITimer {
         }
     }
 
+    /**
+     * Resets all the values to 0.
+     */
     public override fun reset() {
         mStartTime = 0L
         mTotalPauseTime = 0L
