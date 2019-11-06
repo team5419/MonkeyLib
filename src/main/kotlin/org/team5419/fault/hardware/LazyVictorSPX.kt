@@ -5,7 +5,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode
 import com.ctre.phoenix.motorcontrol.DemandType
 import com.ctre.phoenix.motorcontrol.NeutralMode
 
-class LazyVictorSPX(deviceNumber: Int) : VictorSPX(deviceNumber), Victor {
+class LazyVictorSPX(deviceNumber: Int) : VictorSPX(deviceNumber) {
 
     private var lastSet = Double.NaN
     private var lastSecondarySet = Double.NaN
