@@ -5,6 +5,10 @@ import edu.wpi.first.wpilibj.Timer
 
 import java.lang.Runnable
 
+/**
+ * Holds a bunch of loops and loops through them.
+ * @param period The time buffer, or how long inbetweem each loop.
+ */
 public class Looper(val period: Double = 0.005) : ILooper {
 
     private var mRunning: Boolean
@@ -35,12 +39,19 @@ public class Looper(val period: Double = 0.005) : ILooper {
             }
         }
 
+    /**
+     * Registers a loop in the Looper.
+     * @param loop Specifies which loop to register.
+     */
     @Synchronized public override fun register(loop: Loop) {
         synchronized(mLock) {
             mLoops.add(loop)
         }
     }
 
+    /**
+     * Loops through all the loops and starts them up.
+     */
     @Synchronized public fun start() {
         if (!mRunning) {
             println("Starting loops....")
@@ -55,6 +66,9 @@ public class Looper(val period: Double = 0.005) : ILooper {
         }
     }
 
+    /**
+     * Loops through all the loops and stops them.
+     */
     @Synchronized public fun stop() {
         if (mRunning) {
             println("Stopping loops")
