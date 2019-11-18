@@ -4,7 +4,8 @@ import com.ctre.phoenix.motorcontrol.ControlMode
 import com.ctre.phoenix.motorcontrol.DemandType
 import com.ctre.phoenix.motorcontrol.NeutralMode
 
-public class MockLazyVictorSPX(deviceNumber: Int) : Victor {
+public class MockTalonSRX(deviceNumber: Int) : Talon {
+    private var mDeviceNumber: Int
 
     private var mMode: ControlMode? = null
     private var mValue: Double? = null
@@ -12,19 +13,26 @@ public class MockLazyVictorSPX(deviceNumber: Int) : Victor {
     private var mSecondarySet: Double? = null
     private var mNeutralMode: NeutralMode? = null
 
-    public override fun set(mode: ControlMode, value: Double) {
-        mMode = mode
+    init {
+        mDeviceNumber = deviceNumber
+    }
+
+    public override fun set(controlMode: ControlMode, value: Double) {
+        mMode = controlMode
         mValue = value
     }
 
-    public fun set(mode: ControlMode, value: Double, demandType: DemandType, value1: Double) {
+    public override fun set(mode: ControlMode, value: Double, demandType: DemandType, value1: Double) {
         mMode = mode
         mValue = value
         mDemandType = demandType
         mSecondarySet = value1
     }
 
-    public fun setNeutralMode(brakeMode: NeutralMode) {
+    public override fun setNeutralMode(brakeMode: NeutralMode) {
         mNeutralMode = brakeMode
+    }
+
+    public override fun getSensorCollection() {
     }
 }
