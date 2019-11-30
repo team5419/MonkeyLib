@@ -15,5 +15,5 @@ val Number.degrees get() = toDouble().degrees
 fun SIUnit<Radian>.inRadians() = value
 fun SIUnit<Radian>.inDegrees() = Math.toDegrees(value)
 
-fun SIUnit<Radian>.toRotation2d() = Rotation2d(inRadians())
-fun Rotation2d.toUnbounded() = SIUnit<Radian>(radian)
+fun SIUnit<Radian>.toRotation2d() = Rotation2d.fromRadians(inRadians()) // Fix later
+fun Rotation2d.toUnbounded() = SIUnit<Radian>(this.radians) // Fix later

@@ -3,8 +3,6 @@ package tests.math.splines
 import org.junit.Test
 import org.junit.Assert.assertEquals
 
-import org.team5419.fault.math.Epsilon
-
 import org.team5419.fault.math.geometry.Vector2
 import org.team5419.fault.math.geometry.Rotation2d
 import org.team5419.fault.math.geometry.Pose2d

@@ -1,6 +1,6 @@
 package org.team5419.fault.math.geometry
 
-import org.team5419.fault.math.Epsilon
+import org.team5419.fault.math.epsilonEquals
 
 import java.text.DecimalFormat
 
@@ -28,7 +28,7 @@ class Rotation2d(x: Double, y: Double, normalize: Boolean) : Geometric<Rotation2
         get() = field
     val tan: Double
         get() {
-            if (Math.abs(cosAngle) < Epsilon.EPSILON) {
+            if (cosAngle.epsilonEquals(0.0)) {
                 if (sinAngle > 0.0) return Double.POSITIVE_INFINITY
                 else return Double.NEGATIVE_INFINITY
             }
@@ -42,7 +42,7 @@ class Rotation2d(x: Double, y: Double, normalize: Boolean) : Geometric<Rotation2
     init {
         if (normalize) {
             val mag = Math.hypot(x, y)
-            if (mag > Epsilon.EPSILON) {
+            if (mag.epsilonEquals(0.0)) {
                 cosAngle = x / mag
                 sinAngle = y / mag
             } else {
@@ -60,11 +60,7 @@ class Rotation2d(x: Double, y: Double, normalize: Boolean) : Geometric<Rotation2
     constructor(translation: Vector2, normalize: Boolean): this(translation.x, translation.y, normalize)
     constructor(x: Int, y: Int, normalize: Boolean): this(x.toDouble(), y.toDouble(), normalize)
 
-    fun equals(other: Rotation2d): Boolean {
-        val diff = Math.abs(other.degrees - degrees)
-        if (diff < Epsilon.EPSILON) return false
-        return true
-    }
+    fun equals(other: Rotation2d): Boolean = !(this.degrees.epsilonEquals(other.degrees))
 
     operator fun plus(other: Rotation2d): Rotation2d = fromDegrees(degrees + other.degrees)
     operator fun minus(other: Rotation2d): Rotation2d = fromDegrees(degrees - other.degrees)
@@ -92,10 +88,7 @@ class Rotation2d(x: Double, y: Double, normalize: Boolean) : Geometric<Rotation2
         return this.rotateBy(Rotation2d.fromRadians(angleDiff * x))
     }
 
-    fun isParallel(other: Rotation2d): Boolean {
-        val temp = Vector2.cross(toVector(), other.toVector())
-        return Math.abs(temp) < Epsilon.EPSILON
-    }
+    fun isParallel(other: Rotation2d): Boolean = Vector2.cross(toVector(), other.toVector()).epsilonEquals(0.0)
 
     fun toVector(): Vector2 {
         return Vector2(cosAngle, sinAngle)

@@ -5,8 +5,6 @@ import org.team5419.fault.input.TankDriveHelper
 import org.team5419.fault.input.SpaceDriveHelper
 import org.team5419.fault.input.CheesyDriveHelper
 
-import org.team5419.fault.math.Epsilon
-
 import org.junit.Test
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

@@ -1,7 +1,6 @@
 package org.team5419.fault.path
 
-import org.team5419.fault.math.Epsilon
-
+import org.team5419.fault.math.kEpsilon
 import org.team5419.fault.math.geometry.Vector2
 import org.team5419.fault.math.geometry.Pose2d
 
@@ -35,7 +34,7 @@ class PathFollower(path: Path, trackWidth: Double, initLookaheadDistance: Double
     */
     fun update(currentRobotPose: Pose2d): PathFollowerOutput {
         var robotAngle = currentRobotPose.rotation.radians
-        if (robotAngle == 0.0) robotAngle = Epsilon.EPSILON
+        if (robotAngle == 0.0) robotAngle = kEpsilon
         val lookahead = calculateLookahead(currentRobotPose)
         val curvature = calculateCurvature(currentRobotPose, lookahead, robotAngle)
         val velocityTarget = mPath.getVelocity(mLastClosestPointIndex)

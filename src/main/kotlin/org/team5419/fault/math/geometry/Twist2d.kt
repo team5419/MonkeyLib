@@ -2,7 +2,7 @@ package org.team5419.fault.math.geometry
 
 import java.text.DecimalFormat
 
-import org.team5419.fault.math.Epsilon
+import org.team5419.fault.math.epsilonEquals
 
 class Twist2d(dx: Double, dy: Double, dTheta: Double) : Geometric<Twist2d> {
 
@@ -38,7 +38,7 @@ class Twist2d(dx: Double, dy: Double, dTheta: Double) : Geometric<Twist2d> {
     }
 
     fun curvature(): Double {
-        if (Math.abs(dTheta) < Epsilon.EPSILON && norm() < Epsilon.EPSILON) {
+        if (dTheta.epsilonEquals(0.0) && norm().epsilonEquals(0.0)) {
             return 0.0
         }
         return dTheta / norm()

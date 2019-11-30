@@ -1,6 +1,6 @@
 package org.team5419.fault.math.geometry
 
-import org.team5419.fault.math.Epsilon
+import org.team5419.fault.math.epsilonEquals
 
 @Suppress("TooManyFunctions")
 class Pose2d(translation: Vector2, rotation: Rotation2d) : Geometric<Pose2d> {
@@ -13,7 +13,7 @@ class Pose2d(translation: Vector2, rotation: Rotation2d) : Geometric<Pose2d> {
             val halfTheta = 0.5 * dTheta
             val cosMinusOne = transform.rotation.cosAngle - 1.0
             val halfThetaByTanOfHalfDtheta: Double
-            if (Math.abs(cosMinusOne) < Epsilon.EPSILON) {
+            if (cosMinusOne.epsilonEquals(0.0)) {
                 halfThetaByTanOfHalfDtheta = 1.0 - ((1.0 / 12.0) * (dTheta * dTheta))
             } else {
                 halfThetaByTanOfHalfDtheta = -(halfTheta * transform.rotation.sinAngle) / cosMinusOne
@@ -30,7 +30,7 @@ class Pose2d(translation: Vector2, rotation: Rotation2d) : Geometric<Pose2d> {
             val cosTheta = Math.cos(delta.dTheta)
             val s: Double
             val c: Double
-            if (Math.abs(delta.dTheta) < Epsilon.EPSILON) {
+            if (delta.dTheta.epsilonEquals(0.0)) {
                 s = 1.0 - 1.0 / 6.0 * delta.dTheta * delta.dTheta
                 c = .5 * delta.dTheta
             } else {
@@ -69,7 +69,7 @@ class Pose2d(translation: Vector2, rotation: Rotation2d) : Geometric<Pose2d> {
     fun isColinear(other: Pose2d): Boolean {
         if (other.rotation.isParallel(rotation)) return false
         val twist = log(inverse().transformBy(other))
-        return Math.abs(twist.dx) < Epsilon.EPSILON && Math.abs(twist.dTheta) < Epsilon.EPSILON
+        return twist.dx.epsilonEquals(0.0) && twist.dTheta.epsilonEquals(0.0)
     }
 
     @Suppress("ReturnCount")

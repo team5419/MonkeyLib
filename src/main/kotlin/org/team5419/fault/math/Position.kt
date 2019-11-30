@@ -21,7 +21,7 @@ class Position : CSVWritable {
     fun update(leftDistance: Double, rightDistance: Double, angle: Double) {
         val newAngle = Math.toRadians(angle)
         var angleDelta = newAngle - lastAngle
-        if (angleDelta == 0.0) angleDelta = Epsilon.EPSILON
+        if (angleDelta == 0.0) angleDelta = kEpsilon
         val leftDelta = leftDistance - lastLeft
         val rightDelta = rightDistance - lastRight
         val distance = (leftDelta + rightDelta) / 2.0

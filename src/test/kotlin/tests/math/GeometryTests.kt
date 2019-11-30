@@ -5,8 +5,6 @@ import org.team5419.fault.math.geometry.Rotation2d
 import org.team5419.fault.math.geometry.Pose2d
 import org.team5419.fault.math.geometry.Twist2d
 
-import org.team5419.fault.math.Epsilon
-
 import org.junit.Test
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
