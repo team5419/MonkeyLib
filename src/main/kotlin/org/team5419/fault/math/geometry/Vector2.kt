@@ -1,3 +1,4 @@
+
 package org.team5419.fault.math.geometry
 
 import org.team5419.fault.math.epsilonEquals
