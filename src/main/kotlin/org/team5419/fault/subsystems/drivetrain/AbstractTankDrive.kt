@@ -27,6 +27,10 @@ abstract class AbstractTankDrive : IDifferentialFollowerDrive, Subsystem() {
 
     abstract val leftDistance: SIUnit<Meter>
     abstract val rightDistance: SIUnit<Meter>
+
+    abstract val leftVelocity: SIUnit<LinearVelocity>
+    abstract val rightVelocity: SIUnit<LinearVelocity>
+
     abstract val leftDistanceError: SIUnit<Meter>
     abstract val rightDistanceError: SIUnit<Meter>
 
