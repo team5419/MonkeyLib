@@ -25,9 +25,9 @@ public class CharacterizationAction(val driveTrain: AbstractTankDrive) : Action(
         driveTrain.setPercent(autospeed, autospeed)
 
         val leftPosition = driveTrain.leftDistance
-        val leftRate = driveTrain.leftVelocity
-
         val rightPosition = driveTrain.rightDistance
+
+        val leftRate = driveTrain.leftVelocity
         val rightRate = driveTrain.rightVelocity
 
         val leftMotorVolts = battery * Math.abs(priorAutospeed)
@@ -42,17 +42,14 @@ public class CharacterizationAction(val driveTrain: AbstractTankDrive) : Action(
             rightMotorVolts,
 
             leftPosition.value,
-            rightPosition.value,
-
             leftRate.value,
+
+            rightPosition.value,
             rightRate.value
         )
 
         telemetryEntry.setNumberArray(data)
 
         priorAutospeed = autospeed
-    }
-
-    override fun finish() {
     }
 }
