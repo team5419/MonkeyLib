@@ -1,12 +1,15 @@
 package org.team5419.frc2020.auto
 
+import org.team5419.fault.math.units.inMeters
 import edu.wpi.first.wpilibj.Timer
 import edu.wpi.first.wpilibj.RobotController
 import edu.wpi.first.networktables.NetworkTableInstance
 import org.team5419.fault.subsystems.drivetrain.AbstractTankDrive
 import org.team5419.fault.auto.Action
 
-public class CharacterizationAction(val driveTrain: AbstractTankDrive) : Action() {
+public class CharacterizationAction(val drivetrain: AbstractTankDrive) : Action() {
+
+    // connect to the characterization python app so we can send and get data from it
     val autoSpeedEntry = NetworkTableInstance.getDefault().getEntry("/robot/autospeed")
     val telemetryEntry = NetworkTableInstance.getDefault().getEntry("/robot/telemetry")
 
@@ -16,24 +19,22 @@ public class CharacterizationAction(val driveTrain: AbstractTankDrive) : Action(
     }
 
     override fun update() {
+        // get current time
         val now = Timer.getFPGATimestamp()
 
+        // what volatage is the battery at?
         val battery = RobotController.getBatteryVoltage()
 
+        // get the target speed from the app
         val autospeed = autoSpeedEntry.getDouble(0.0)
+        drivetrain.setPercent(autospeed, autospeed)
 
-        driveTrain.setPercent(autospeed, autospeed)
-
-        val leftPosition = driveTrain.leftDistance
-        val rightPosition = driveTrain.rightDistance
-
-        val leftRate = driveTrain.leftVelocity
-        val rightRate = driveTrain.rightVelocity
-
+        // calculate how much voltage we told the motors to last frame
         val leftMotorVolts = battery * Math.abs(priorAutospeed)
         val rightMotorVolts = battery * Math.abs(priorAutospeed)
 
-        val data: Array<Double> = arrayOf<Double>(
+        // send the data to the controlle panel
+        telemetryEntry.setNumberArray(arrayOf<Double>(
             now,
             battery,
             autospeed,
@@ -41,15 +42,16 @@ public class CharacterizationAction(val driveTrain: AbstractTankDrive) : Action(
             leftMotorVolts,
             rightMotorVolts,
 
-            leftPosition.value,
-            leftRate.value,
+            // curent position in meters of each side
+            drivetrain.leftDistance.inMeters(),
+            drivetrain.rightDistance.inMeters(),
 
-            rightPosition.value,
-            rightRate.value
-        )
+            // curent velocity of each side in meters per second
+            drivetrain.leftDistance.inMeters(),
+            drivetrain.rightDistance.inMeters()
+        ))
 
-        telemetryEntry.setNumberArray(data)
-
+        // save the auto speed
         priorAutospeed = autospeed
     }
 }
