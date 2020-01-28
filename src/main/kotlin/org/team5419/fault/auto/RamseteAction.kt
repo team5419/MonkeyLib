@@ -1,3 +1,4 @@
+import org.team5419.fault.auto.Action
 import org.team5419.fault.math.units.SIUnit
 import org.team5419.fault.math.units.Meter
 import org.team5419.fault.math.units.meters
@@ -10,17 +11,17 @@ import org.team5419.fault.math.units.derived.LinearAcceleration
 import org.team5419.fault.math.units.derived.Volt
 import org.team5419.fault.math.units.derived.volts
 import org.team5419.fault.subsystems.drivetrain.AbstractTankDrive
-import org.team5419.fault.auto.Action
-import edu.wpi.first.wpilibj.kinematics.DifferentialDriveKinematics
-import edu.wpi.first.wpilibj.trajectory.TrajectoryConfig
-import edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator
 import edu.wpi.first.wpilibj.controller.RamseteController
 import edu.wpi.first.wpilibj.controller.SimpleMotorFeedforward
 import edu.wpi.first.wpilibj.geometry.Pose2d
 import edu.wpi.first.wpilibj.geometry.Rotation2d
 import edu.wpi.first.wpilibj.geometry.Translation2d
+import edu.wpi.first.wpilibj.kinematics.DifferentialDriveKinematics
 import edu.wpi.first.wpilibj.kinematics.DifferentialDriveWheelSpeeds
+import edu.wpi.first.wpilibj.trajectory.TrajectoryConfig
+import edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator
 import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveVoltageConstraint
+import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveKinematicsConstraint
 
 // refrences:
 // https://github.com/wpilibsuite/allwpilib/blob/master/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/RamseteCommand.java
@@ -28,6 +29,10 @@ import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveVoltageConst
 
 class RamseteAction(
     val drivetrain: AbstractTankDrive,
+
+    val startingPose: org.team5419.fault.math.geometry.Pose2d,
+
+    val finalPose: org.team5419.fault.math.geometry.Pose2d,
 
     val maxVelocity: SIUnit<LinearVelocity>,
     val maxAcceleration: SIUnit<LinearAcceleration>,
@@ -53,6 +58,11 @@ class RamseteAction(
         maxVoltage.value
     )
 
+    val driveKinematicsConstraint = DifferentialDriveKinematicsConstraint(
+        driveKinematics,
+        maxVelocity.value
+    )
+
     val config = TrajectoryConfig(
         maxVelocity.value,
         maxAcceleration.value
@@ -61,11 +71,18 @@ class RamseteAction(
     init {
         config.setKinematics(driveKinematics)
         config.addConstraint(voltageConstraint)
+        config.addConstraint(driveKinematicsConstraint)
     }
 
     val trajectory = TrajectoryGenerator.generateTrajectory(
         // inital pose
-        Pose2d(0.0, 0.0, Rotation2d(0.0)),
+        Pose2d(
+            startingPose.translation.x.inMeters(),
+            startingPose.translation.y.inMeters(),
+            Rotation2d(
+                startingPose.rotation.radian.value
+            )
+        ),
 
         // list of intermidate points
         listOf<Translation2d>(
@@ -74,7 +91,13 @@ class RamseteAction(
         ),
 
         // final pose
-        Pose2d(0.0, -3.0, Rotation2d(0.0)),
+        Pose2d(
+            finalPose.translation.x.inMeters(),
+            finalPose.translation.y.inMeters(),
+            Rotation2d(
+                finalPose.rotation.radian.value
+            )
+        ),
 
         // the trajectory configuration
         config
