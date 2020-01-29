@@ -10,6 +10,7 @@ import org.team5419.fault.math.units.derived.velocity
 import org.team5419.fault.math.units.derived.LinearAcceleration
 import org.team5419.fault.math.units.derived.Volt
 import org.team5419.fault.math.units.derived.volts
+import org.team5419.fault.math.geometry.Vector2
 import org.team5419.fault.subsystems.drivetrain.AbstractTankDrive
 import edu.wpi.first.wpilibj.controller.RamseteController
 import edu.wpi.first.wpilibj.controller.SimpleMotorFeedforward
@@ -31,6 +32,8 @@ class RamseteAction(
     val drivetrain: AbstractTankDrive,
 
     val startingPose: org.team5419.fault.math.geometry.Pose2d,
+
+    val intermidatePose: Array<Vector2<Meter>>,
 
     val finalPose: org.team5419.fault.math.geometry.Pose2d,
 
@@ -85,10 +88,7 @@ class RamseteAction(
         ),
 
         // list of intermidate points
-        listOf<Translation2d>(
-            // Translation2d(1.0, 1.0),
-            // Translation2d(2.0, -1.0)
-        ),
+        intermidatePose.map({ Translation2d(it.x.inMeters(), it.y.inMeters()) }),
 
         // final pose
         Pose2d(
