@@ -15,22 +15,22 @@ typealias LinearBerkeleiumSRX = BerkeliumSRX<Meter>
 typealias AngularBerkeleiumSRX = BerkeliumSRX<Radian>
 
 class BerkeliumFX<T : SIKey>(
-    val talonSRX: TalonSRX,
+    val talonFX: TalonSRX,
     model: NativeUnitModel<T>
-) : CTREBerkeliumMotor<T>(talonSRX, model) {
+) : CTREBerkeliumMotor<T>(talonFX, model) {
 
     constructor(id: Int, model: NativeUnitModel<T>): this(TalonSRX(id), model)
 
     init {
-        talonSRX.configFactoryDefault(0)
+        talonFX.configFactoryDefault(0)
     }
 
     fun configCurrentLimit(enabled: Boolean, config: CurrentLimitConfig? = null) {
-        talonSRX.enableCurrentLimit(enabled)
+        talonFX.enableCurrentLimit(enabled)
         if (enabled && config != null) {
-            talonSRX.configContinuousCurrentLimit(config.continuousCurrentLimit.inAmps().toInt())
-            talonSRX.configPeakCurrentLimit(config.peakCurrentLimit.inAmps().toInt())
-            talonSRX.configPeakCurrentDuration(config.peakCurrentLimitDuration.inMilliseconds().toInt())
+            talonFX.configContinuousCurrentLimit(config.continuousCurrentLimit.inAmps().toInt())
+            talonFX.configPeakCurrentLimit(config.peakCurrentLimit.inAmps().toInt())
+            talonFX.configPeakCurrentDuration(config.peakCurrentLimitDuration.inMilliseconds().toInt())
         }
     }
 
