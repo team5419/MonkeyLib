@@ -22,7 +22,7 @@ open class Limelight(
 
     // FEEDBACK VARIABLES
     val targetFound: Boolean
-        get() = mLimelight.getEntry("tv").getBoolean(false)
+        get() = mLimelight.getEntry("tv").getDouble(0.0) > 0.0
 
     val horizontalOffset: Double
         get() {
