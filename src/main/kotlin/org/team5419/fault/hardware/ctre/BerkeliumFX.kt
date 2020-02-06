@@ -1,6 +1,7 @@
 package org.team5419.fault.hardware.ctre
 
-import com.ctre.phoenix.motorcontrol.can.TalonSRX
+import com.ctre.phoenix.motorcontrol.can.TalonFX
+import com.ctre.phoenix.motorcontrol.TalonFXFeedbackDevice
 import org.team5419.fault.math.units.SIUnit
 import org.team5419.fault.math.units.SIKey
 import org.team5419.fault.math.units.Meter
@@ -11,18 +12,19 @@ import org.team5419.fault.math.units.inAmps
 import org.team5419.fault.math.units.derived.Radian
 import org.team5419.fault.math.units.native.NativeUnitModel
 
-typealias LinearBerkeleiumSRX = BerkeliumSRX<Meter>
-typealias AngularBerkeleiumSRX = BerkeliumSRX<Radian>
+typealias LinearBerkeleiumFX = BerkeliumFX<Meter>
+typealias AngularBerkeleiumFX = BerkeliumFX<Radian>
 
 class BerkeliumFX<T : SIKey>(
-    val talonFX: TalonSRX,
+    val talonFX: TalonFX,
     model: NativeUnitModel<T>
 ) : CTREBerkeliumMotor<T>(talonFX, model) {
 
-    constructor(id: Int, model: NativeUnitModel<T>): this(TalonSRX(id), model)
+    constructor(id: Int, model: NativeUnitModel<T>): this(TalonFX(id), model)
 
     init {
         talonFX.configFactoryDefault(0)
+        talonFX.configSelectedFeedbackSensor(TalonFXFeedbackDevice.IntegratedSensor)
     }
 
     fun configCurrentLimit(enabled: Boolean, config: CurrentLimitConfig? = null) {

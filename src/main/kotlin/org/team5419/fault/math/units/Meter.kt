@@ -7,6 +7,7 @@ const val kInchToMeter = 0.0254
 const val kFeetToMeter = kInchToMeter * 12.0
 const val kThouToMeter = kInchToMeter * 0.001
 const val kYardToMeter = kFeetToMeter * 3.0
+const val kLightYearsToMeter = 1 / 9.461E15
 
 val Double.meters get() = SIUnit<Meter>(this)
 val Double.thou get() = SIUnit<Meter>(times(kThouToMeter))
