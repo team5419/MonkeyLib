@@ -1,4 +1,8 @@
+package org.team5419.fault.auto
+
+
 import org.team5419.fault.auto.Action
+
 import org.team5419.fault.math.units.SIUnit
 import org.team5419.fault.math.units.Meter
 import org.team5419.fault.math.units.meters
