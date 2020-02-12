@@ -1,4 +1,5 @@
-import org.team5419.fault.auto.Action
+package org.team5419.fault.auto
+
 import org.team5419.fault.math.units.SIUnit
 import org.team5419.fault.math.units.Meter
 import org.team5419.fault.math.units.meters
@@ -15,11 +16,10 @@ import edu.wpi.first.wpilibj.controller.RamseteController
 import edu.wpi.first.wpilibj.controller.SimpleMotorFeedforward
 import edu.wpi.first.wpilibj.geometry.Pose2d
 import edu.wpi.first.wpilibj.geometry.Rotation2d
-import edu.wpi.first.wpilibj.geometry.Translation2d
 import edu.wpi.first.wpilibj.kinematics.DifferentialDriveKinematics
 import edu.wpi.first.wpilibj.kinematics.DifferentialDriveWheelSpeeds
+import edu.wpi.first.wpilibj.trajectory.Trajectory
 import edu.wpi.first.wpilibj.trajectory.TrajectoryConfig
-import edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator
 import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveVoltageConstraint
 import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveKinematicsConstraint
 
@@ -27,12 +27,10 @@ import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveKinematicsCo
 // https://github.com/wpilibsuite/allwpilib/blob/master/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/RamseteCommand.java
 // https://docs.wpilib.org/en/latest/docs/software/examples-tutorials/trajectory-tutorial/index.html
 
-class RamseteAction(
+public class RamseteAction(
     val drivetrain: AbstractTankDrive,
 
-    val startingPose: org.team5419.fault.math.geometry.Pose2d,
-
-    val finalPose: org.team5419.fault.math.geometry.Pose2d,
+    val trajectory: Trajectory,
 
     val maxVelocity: SIUnit<LinearVelocity>,
     val maxAcceleration: SIUnit<LinearAcceleration>,
@@ -74,35 +72,6 @@ class RamseteAction(
         config.addConstraint(driveKinematicsConstraint)
     }
 
-    val trajectory = TrajectoryGenerator.generateTrajectory(
-        // inital pose
-        Pose2d(
-            startingPose.translation.x.inMeters(),
-            startingPose.translation.y.inMeters(),
-            Rotation2d(
-                startingPose.rotation.radian.value
-            )
-        ),
-
-        // list of intermidate points
-        listOf<Translation2d>(
-            // Translation2d(1.0, 1.0),
-            // Translation2d(2.0, -1.0)
-        ),
-
-        // final pose
-        Pose2d(
-            finalPose.translation.x.inMeters(),
-            finalPose.translation.y.inMeters(),
-            Rotation2d(
-                finalPose.rotation.radian.value
-            )
-        ),
-
-        // the trajectory configuration
-        config
-    )
-
     val controller = RamseteController(beta, zeta)
 
     var prevTime = 0.0.seconds
@@ -110,6 +79,10 @@ class RamseteAction(
 
     init {
         finishCondition += { getTime() > trajectory.getTotalTimeSeconds() }
+    }
+
+    override fun start() {
+        super.start()
     }
 
     override fun update() {
@@ -146,5 +119,9 @@ class RamseteAction(
             leftFeedForward.volts,
             rightFeedForward.volts
         )
+    }
+
+    override fun finish() {
+        drivetrain.setPercent(0.0, 0.0)
     }
 }
