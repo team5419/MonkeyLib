@@ -29,7 +29,7 @@ import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveKinematicsCo
 // https://github.com/wpilibsuite/allwpilib/blob/master/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/RamseteCommand.java
 // https://docs.wpilib.org/en/latest/docs/software/examples-tutorials/trajectory-tutorial/index.html
 
-public class RamseteAction(
+class RamseteAction(
     val drivetrain: AbstractTankDrive,
 
     val startingPose: org.team5419.fault.math.geometry.Pose2d,
