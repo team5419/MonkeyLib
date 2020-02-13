@@ -31,21 +31,21 @@ abstract class BerkeliumIterativeRobotBase(
 
     abstract override fun startCompetition()
 
-    // init methods
     open fun robotInit() = println("Default robot init method... Override me")
     open fun disabledInit() = println("Default disabled init method... Override me")
     open fun teleopInit() = println("Default teleop init method... Override me")
     open fun autonomousInit() = println("Default auto init method... Override me")
     open fun testInit() = println("Default test init method... Override me")
 
-    // periodic loop message guards
+    // variables to prevent the console being spammed
+    // with overide messages. We only need to hear about it once, and
+    // print statements are most likely slow anyways
     private var mRobotFirstLoop = true
     private var mDisabledFirstLoop = true
     private var mTeleopFirstLoop = true
     private var mAutoFirstLoop = true
     private var mTestFirstLoop = true
 
-    // periodic methods
     open fun robotPeriodic() {
         if (mRobotFirstLoop) {
             println("Default robot periodic method... Override me")
@@ -81,7 +81,6 @@ abstract class BerkeliumIterativeRobotBase(
         }
     }
 
-    // loop func
     @Suppress("ComplexMethod")
     protected fun loopFunc() {
         mLoopStartTime = Timer.getFPGATimestamp().seconds
@@ -118,19 +117,27 @@ abstract class BerkeliumIterativeRobotBase(
         }
         robotPeriodic()
         mLoopEndTime = Timer.getFPGATimestamp().seconds
-        // check for overrun
+
+        // if the duration of the loop exceeds the desired loop period,
+        // this is called an "overrun," they are usually indicators of
+        // inefficient code or other issues.
         if (mLoopEndTime > (mPeriod + mLoopStartTime)) {
-            // overrun
             mOverrunCount += 1
         }
-        // check if we should print overruns
+
+        // after a certain ammount of time, we want to report the overruns
+        // that have occured over the past x ammount of time
+        // here we check if it is time to do so
+        // this is mainly to prevent spamming the console,
+        // as thats inefficient and annoying
         if ((mLoopEndTime - mLastOverrunDump) > mOverrunPrintPeriod) {
-            // check if we have overruns
+
+            // if we've had atleast 1 overrun in the past x seconds,
+            // report it to the console and reset the overrun counter.
             if (mOverrunCount > 0) {
                 println("WARNING: There have been $mOverrunCount loop overruns in the " +
                         "past ${mLoopEndTime - mLastOverrunDump} seconds!")
 
-                // set overruns to 0
                 mOverrunCount = 0
             }
             mLastOverrunDump = mLoopEndTime

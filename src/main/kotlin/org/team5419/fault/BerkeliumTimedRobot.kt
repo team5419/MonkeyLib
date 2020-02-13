@@ -30,7 +30,8 @@ open class BerkeliumTimedRobot(
         while (true) {
             var currentTime = NotifierJNI.waitForNotifierAlarm(mNotifierHandle)
             if (currentTime == 0.toLong()) {
-                // this bad
+                // this is something wpilib checks for.
+                // no idea when this would actually happen.
                 break
             }
             mExpirationTime += mPeriod.value.toLong()
