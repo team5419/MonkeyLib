@@ -63,8 +63,7 @@ open class SerialAction(actions: MutableList<Action>) : ActionGroup() {
     override val actions: List<Action>
 
     init {
-        finishCondition += { isLastAction() }
-        finishCondition += { isLastActionDone() }
+        finishCondition += { isLastAction() && isLastActionDone() }
         this.actions = actions
         // assert(this.actions.size < 1) { "No actions added to command group" }
         index = 0
