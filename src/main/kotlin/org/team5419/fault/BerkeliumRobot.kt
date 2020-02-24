@@ -1,25 +1,26 @@
 package org.team5419.fault
 
+import edu.wpi.first.hal.FRCNetComm
+import edu.wpi.first.hal.HAL
 import edu.wpi.first.wpilibj.RobotBase
+import edu.wpi.first.wpilibj.TimedRobot
 import org.team5419.fault.math.units.SIUnit
 import org.team5419.fault.math.units.Second
-import org.team5419.fault.math.units.milliseconds
-import org.team5419.fault.math.units.seconds
 import org.team5419.fault.subsystems.Subsystem
 import org.team5419.fault.subsystems.SubsystemManager
 
 @Suppress("TooManyFunctions")
-abstract class BerkeliumRobot(
-    period: SIUnit<Second> = SIUnit<Second>(0.05),
-    overrunDumpPeriod: SIUnit<Second> = 5.seconds
-) {
+abstract class BerkeliumRobot(period: SIUnit<Second> = SIUnit<Second>(0.05)) {
 
-    protected val wrappedValue = BerkTimedRobot(period, overrunDumpPeriod)
+    protected val wrappedValue = WpiTimedRobot(period.value)
 
-    protected inner class BerkTimedRobot(
-        period: SIUnit<Second> = 20.milliseconds,
-        overrunDumpPeriod: SIUnit<Second> = 5.seconds
-    ) : BerkeliumTimedRobot(period, overrunDumpPeriod) {
+    protected inner class WpiTimedRobot(period: Double = 0.05) : TimedRobot(period) {
+
+        private val kLanguageKotlin = 6
+
+        init {
+            HAL.report(FRCNetComm.tResourceType.kResourceType_Language, kLanguageKotlin)
+        }
 
         override fun robotInit() {
             this@BerkeliumRobot.robotInit()
