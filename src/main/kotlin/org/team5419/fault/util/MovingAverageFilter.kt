@@ -10,22 +10,16 @@ class MovingAverageFilter(numberOfValues: Int) {
 
     init {
         this.values = LinkedList()
+        for (i in 1..numberOfValues) {
+            this.values.add(0.0)
+        }
         this.numberOfValues = numberOfValues
     }
 
-    private var staticAddValue: (Double) -> Unit = { value ->
+    fun addValue(value: Double) {
         this.values.add(value)
         this.values.remove()
     }
-
-    private var initAddValue: (Double) -> Unit = { value ->
-        this.values.add(value)
-        if (this.values.size == numberOfValues) {
-            addValue = staticAddValue
-        }
-    }
-
-    private var addValue: (Double) -> Unit = initAddValue
 
     operator fun plusAssign(value: Double) = addValue(value)
 }
