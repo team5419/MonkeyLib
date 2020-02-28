@@ -28,18 +28,18 @@ abstract class BerkeliumRobot(period: SIUnit<Second> = SIUnit<Second>(0.05)) {
         }
 
         override fun autonomousInit() {
-            this@BerkeliumRobot.autonomousInit()
             SubsystemManager.autoReset()
+            this@BerkeliumRobot.autonomousInit()
         }
 
         override fun teleopInit() {
-            this@BerkeliumRobot.teleopInit()
             SubsystemManager.teleopReset()
+            this@BerkeliumRobot.teleopInit()
         }
 
         override fun disabledInit() {
-            this@BerkeliumRobot.disabledInit()
             SubsystemManager.zeroOutputs()
+            this@BerkeliumRobot.disabledInit()
         }
 
         override fun testInit() {
