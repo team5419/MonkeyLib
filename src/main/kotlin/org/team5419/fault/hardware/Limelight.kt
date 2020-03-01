@@ -67,7 +67,7 @@ open class Limelight(
     // CALCULATED VARIABLES
 
     val horizontalDistance: SIUnit<Meter>
-        get() = (mTargetHeight - mCameraHeight) / (mCameraAngle.radian + horizontalOffset.degrees).tan
+        get() = (mTargetHeight - mCameraHeight) / (mCameraAngle.radian + verticalOffset.degrees).tan
 
     val calculateTargetSkew: Double
         get() {
@@ -124,15 +124,21 @@ open class Limelight(
         }
 
     // PIPELINE
-    fun setPipeline(pipeline: Pipeline) = setPipeline(pipeline.id)
-    fun setPipeline(id: Int) {
-        if (id < 0 || id > 9) {
-            println("Pipeline id needs to be from 0 to 9, ignoring value: $id")
-            return
-        } else {
-            mLimelight.getEntry("pipeline").setNumber(id)
-        }
+    fun setPipeline(newPipeline: Pipeline) {
+        pipeline = (newPipeline.id)
     }
+
+    var pipeline: Int = 0
+        set(id: Int) {
+            println("$field -> $id")
+            if (field == id) return
+            if (id < 0 || id > 9) {
+                println("Pipeline id needs to be from 0 to 9, ignoring value: $id")
+                return
+            }
+            mLimelight.getEntry("pipeline").setNumber(id)
+            field = id
+        }
 
     private val mLimelight = NetworkTableInstance.getDefault().getTable(networkTableName)
 
