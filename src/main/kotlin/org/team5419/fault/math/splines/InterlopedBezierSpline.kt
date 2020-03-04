@@ -4,26 +4,15 @@ import org.team5419.fault.math.geometry.Vector2d
 import org.team5419.fault.math.geometry.Rotation2d
 import org.team5419.fault.util.Oof
 
-public class InterlopedCubicBezierSpline(vararg points: Vector2d) : Spline() {
-    private val splines: Array<CubicBezierSpline>
-    private val points: Array<out Vector2d>
+public class InterlopedBezierSpline(vararg splines: BezierSpline) : Spline() {
+
+    private val splines: Array<out BezierSpline>
     private val numSplines: Int
-        get() = this.splines.size
+        get() = splines.size
 
-    init {
-        if (points.count() % 3 != 1) throw Oof("Inncorrect number of points")
-        this.points = points
-        this.splines = Array<CubicBezierSpline>((points.count() - 1) / 3) {
-            i -> CubicBezierSpline(
-                points[i * 3],
-                points[i * 3 + 1],
-                points[i * 3 + 2],
-                points[i * 3 + 3]
-            )
-        }
-    }
+    init { this.splines = splines }
 
-    fun getSpline(t: Double): CubicBezierSpline = this.splines[(t * this.numSplines).toInt()]
+    fun getSpline(t: Double): BezierSpline = this.splines[(t * this.numSplines).toInt()]
     fun getReletiveT(t: Double): Double = (t * this.numSplines) - (t * this.numSplines).toInt()
 
     override fun getPoint(t: Double): Vector2d = this.getSpline(t).getPoint(this.getReletiveT(t))
