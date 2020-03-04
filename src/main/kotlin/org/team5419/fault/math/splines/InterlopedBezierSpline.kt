@@ -12,13 +12,13 @@ public class InterlopedBezierSpline(vararg splines: BezierSpline) : Spline() {
 
     init { this.splines = splines }
 
-    fun getSpline(t: Double): BezierSpline = this.splines[(t * this.numSplines).toInt()]
-    fun getReletiveT(t: Double): Double = (t * this.numSplines) - (t * this.numSplines).toInt()
+    fun getSpline(u: Double): BezierSpline = this.splines[(u * this.numSplines).toInt()]
+    fun getReletiveT(u: Double): Double = (u * this.numSplines) - (u * this.numSplines).toInt()
 
-    override fun getPoint(t: Double): Vector2d = this.getSpline(t).getPoint(this.getReletiveT(t))
-    override fun getHeading(t: Double): Rotation2d = this.getSpline(t).getHeading(this.getReletiveT(t))
-    override fun getVelocity(t: Double): Double = this.getSpline(t).getVelocity(this.getReletiveT(t))
+    override fun getPoint(u: Double): Vector2d = this.getSpline(u).getPoint(this.getReletiveT(u))
+    override fun getHeading(u: Double): Rotation2d = this.getSpline(u).getHeading(this.getReletiveT(u))
+    override fun getVelocity(u: Double): Double = this.getSpline(u).getVelocity(this.getReletiveT(u)) //TO FIX
 
-    override fun getCurvature(t: Double): Double = this.getSpline(t).getCurvature(this.getReletiveT(t))
-    override fun getDCurvature(t: Double): Double = this.getSpline(t).getDCurvature(this.getReletiveT(t))
+    override fun getCurvature(u: Double): Double = this.getSpline(u).getCurvature(this.getReletiveT(u))
+    override fun getDCurvature(u: Double): Double = this.getSpline(u).getDCurvature(this.getReletiveT(u))
 }
