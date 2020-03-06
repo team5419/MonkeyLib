@@ -1,7 +1,9 @@
 package org.team5419.fault.auto
 
-abstract class ActionGroup internal constructor() : Action() {
+import org.team5419.fault.math.units.Second
+import org.team5419.fault.math.units.SIUnit
 
+abstract class ActionGroup internal constructor() : Action() {
     internal abstract val actions: List<Action>
 }
 
@@ -31,8 +33,9 @@ open class ParallelAction(actions: List<Action>) : ActionGroup() {
         }
     }
 
-    override fun update() {
+    override fun update(dt: SIUnit<Second>) {
         val iterator = actionMap.iterator()
+
         while (iterator.hasNext()) {
             val (action, finished) = iterator.next()
             if (finished) continue
@@ -40,7 +43,7 @@ open class ParallelAction(actions: List<Action>) : ActionGroup() {
                 action.finish()
                 actionMap.set(action, true)
             } else {
-                action.update()
+                action.update(dt)
             }
         }
     }
@@ -75,15 +78,16 @@ open class SerialAction(actions: MutableList<Action>) : ActionGroup() {
         actions[index].start()
     }
 
-    override fun update() {
-        super.update()
+    override fun update(dt: SIUnit<Second>) {
         if (isLastAction() && isLastActionDone()) return
-        else if (actions[index].next() && !isLastAction()) {
+
+        if (actions[index].next() && !isLastAction()) {
             actions[index].finish()
             index++
             actions[index].start()
         }
-        actions[index].update()
+
+        actions[index].update(dt)
     }
 
     override fun finish() {

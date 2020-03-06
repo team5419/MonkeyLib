@@ -24,6 +24,7 @@ import edu.wpi.first.wpilibj.trajectory.TrajectoryConfig
 import edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator
 import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveVoltageConstraint
 import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveKinematicsConstraint
+import org.team5419.fault.math.units.Second
 
 // refrences:
 // https://github.com/wpilibsuite/allwpilib/blob/master/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/RamseteCommand.java
@@ -113,9 +114,8 @@ public class RamseteAction(
         finishCondition += { getTime() > trajectory.getTotalTimeSeconds() }
     }
 
-    override fun update() {
+    override fun update(dt: SIUnit<Second>) {
         val time = getTime()
-        val dt = time - prevTime
 
         val chassisSpeed = controller.calculate(
             Pose2d(

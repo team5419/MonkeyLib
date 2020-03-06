@@ -25,7 +25,7 @@ open class Action(
         timer.start()
     }
 
-    open fun update() {}
+    open fun update(dt: SIUnit<Second>) {}
 
     protected fun timedOut() = (timer.get() >= mTimeout)
 
@@ -83,9 +83,8 @@ open class ConditionalAction(
         if (selectedAction != null) selectedAction!!.start()
     }
 
-    override fun update() {
-        super.update()
-        if (selectedAction != null) selectedAction!!.update()
+    override fun update(dt: SIUnit<Second>) {
+        if (selectedAction != null) selectedAction!!.update(dt)
     }
 
     override fun finish() {

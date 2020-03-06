@@ -6,6 +6,8 @@ import edu.wpi.first.wpilibj.RobotController
 import edu.wpi.first.networktables.NetworkTableInstance
 import org.team5419.fault.subsystems.drivetrain.AbstractTankDrive
 import org.team5419.fault.auto.Action
+import org.team5419.fault.math.units.Second
+import org.team5419.fault.math.units.SIUnit
 
 public class CharacterizationAction(val drivetrain: AbstractTankDrive) : Action() {
 
@@ -18,7 +20,7 @@ public class CharacterizationAction(val drivetrain: AbstractTankDrive) : Action(
     override fun start() {
     }
 
-    override fun update() {
+    override fun update(dt: SIUnit<Second>) {
         // get current time
         val now = Timer.getFPGATimestamp()
 
