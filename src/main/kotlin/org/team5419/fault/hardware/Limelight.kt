@@ -130,7 +130,6 @@ open class Limelight(
 
     var pipeline: Int = 0
         set(id: Int) {
-            println("$field -> $id")
             if (field == id) return
             if (id < 0 || id > 9) {
                 println("Pipeline id needs to be from 0 to 9, ignoring value: $id")
