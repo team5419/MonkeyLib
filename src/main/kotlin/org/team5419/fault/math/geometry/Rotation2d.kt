@@ -8,10 +8,11 @@ import org.team5419.fault.math.units.derived.cos
 import org.team5419.fault.math.units.derived.sin
 import org.team5419.fault.math.units.derived.radians
 import org.team5419.fault.math.units.derived.inDegrees
+import edu.wpi.first.wpilibj.geometry.Rotation2d as WPIlibRotation
 // import org.team5419.fault.math.units.derived.radians
 
 @Suppress("EqualsWithHashCodeExist")
-class Rotation2d {
+class Rotation2d(x: Double, y: Double, normalize: Boolean) {
 
     val value: SIUnit<Radian>
     val cos: Double
@@ -21,7 +22,7 @@ class Rotation2d {
 
     constructor(heading: SIUnit<Radian>) : this(heading.cos, heading.sin, true)
 
-    constructor(x: Double, y: Double, normalize: Boolean) {
+    init {
         if (normalize) {
             val magnitude = Math.hypot(x, y)
             if (magnitude > kEpsilon) {
@@ -43,6 +44,8 @@ class Rotation2d {
 
     fun isParallel(rotation: Rotation2d) = (this - rotation).radian epsilonEquals 0.0.radians
 
+    fun asWPIlibRotation(): WPIlibRotation = WPIlibRotation(value.value)
+
     operator fun minus(other: Rotation2d) = plus(-other)
     operator fun unaryMinus() = Rotation2d(-value)
 
@@ -50,9 +53,9 @@ class Rotation2d {
 
     operator fun plus(other: Rotation2d): Rotation2d {
         return Rotation2d(
-                cos * other.cos - sin * other.sin,
-                cos * other.sin + sin * other.cos,
-                true
+            cos * other.cos - sin * other.sin,
+            cos * other.sin + sin * other.cos,
+            true
         )
     }
 

@@ -6,6 +6,7 @@ import org.team5419.fault.math.units.Meter
 import org.team5419.fault.math.units.SIUnit
 import org.team5419.fault.math.units.derived.Radian
 import org.team5419.fault.math.units.derived.toRotation2d
+import edu.wpi.first.wpilibj.geometry.Pose2d as WPIlibPose2d
 import kotlin.math.absoluteValue
 
 data class Pose2d(
@@ -55,10 +56,10 @@ data class Pose2d(
     operator fun minus(other: Pose2d) = this + -other
 
     fun transformBy(other: Pose2d) =
-            Pose2d(
-                    translation + (other.translation * rotation),
-                    rotation + other.rotation
-            )
+        Pose2d(
+            translation + (other.translation * rotation),
+            rotation + other.rotation
+        )
 
     operator fun unaryMinus(): Pose2d {
         val invertedRotation = -rotation
@@ -81,6 +82,11 @@ data class Pose2d(
         val twist = (-this + endValue).twist
         return this + (twist * t).asPose
     }
+
+    fun toWPIlibRotation(): WPIlibPose2d = WPIlibPose2d(
+        translation.asWPIlibTranslation(),
+        rotation.asWPIlibRotation()
+    )
 
     override fun toString() = toCSV()
 

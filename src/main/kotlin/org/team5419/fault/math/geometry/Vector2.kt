@@ -6,6 +6,7 @@ import org.team5419.fault.math.units.meters
 import org.team5419.fault.math.units.SIUnit
 import org.team5419.fault.math.units.SIKey
 import org.team5419.fault.math.units.Meter
+import edu.wpi.first.wpilibj.geometry.Translation2d as WPIlibTranslation
 import kotlin.math.hypot
 
 fun Rotation2d.toTranslation() = Vector2(cos.meters, sin.meters)
@@ -15,8 +16,10 @@ typealias Vector2d = Vector2<Meter>
 data class Vector2<T : SIKey> constructor(
     val x: SIUnit<T>,
     val y: SIUnit<T>
-) : State<Vector2<T>> {
+) :  State<Vector2<T>> {
 
+    val norm: SIUnit<Meter>
+    
     constructor() : this(SIUnit<T>(0.0), SIUnit<T>(0.0))
 
     // Vector to Translation3d
@@ -25,7 +28,9 @@ data class Vector2<T : SIKey> constructor(
         distance: SIUnit<T> = SIUnit<T>(0.0)
     ) : this (distance * rotation.cos, distance * rotation.sin)
 
-    val norm get() = hypot(x.value, y.value).meters
+    init{
+        norm = hypot(x.value, y.value).meters
+    }
 
     override fun interpolate(endValue: Vector2<T>, t: Double) = when {
         t <= 0 -> this
@@ -59,6 +64,8 @@ data class Vector2<T : SIKey> constructor(
         val factor = other.toDouble()
         return Vector2(x / factor, y / factor)
     }
+
+    fun asWPIlibTranslation(): WPIlibTranslation = WPIlibTranslation(x.value, y.value)
 
     operator fun unaryMinus() = Vector2(-x, -y)
 

@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9b5d613-e916-43ad-8b2e-715c35222a4b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/team5419/fault/hardware/Limelight.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/team5419/fault/hardware/Limelight.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/team5419/fault/math/geometry/Pose2d.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/team5419/fault/math/geometry/Pose2d.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/team5419/fault/math/geometry/Rotation2d.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/team5419/fault/math/geometry/Rotation2d.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/team5419/fault/math/geometry/Vector2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/team5419/fault/math/geometry/Vector2.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/team5419/fault/math/localization/PositionTracker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/team5419/fault/math/localization/PositionTracker.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/math/GeometryTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/math/GeometryTests.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/math/splines/QuinticHermiteOptimizerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/math/splines/QuinticHermiteOptimizerTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/math/splines/TrajectoryGeneratorTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/math/splines/TrajectoryGeneratorTest.kt" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,25 +30,50 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="external.system.task.project.file.to.start" value="$PROJECT_DIR$" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RunManager">
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9b5d613-e916-43ad-8b2e-715c35222a4b" name="Default Changelist" comment="" />
+      <created>1584660043921</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584660043921</updated>
+    </task>
+    <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -69,5 +87,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584660113752">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584660113752" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1584660097657">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584660097657" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584660053032">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584660053032" />
   </component>
 </project>
