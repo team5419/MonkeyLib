@@ -1,6 +1,5 @@
 package org.team5419.fault.auto
 
-import org.team5419.fault.auto.Routine
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser
 
@@ -10,7 +9,7 @@ abstract class AutoSelector(tab: ShuffleboardTab, routines: Array<Routine>, name
 
     protected val selector: SendableChooser<Routine>
 
-    init{
+    init {
         selector = SendableChooser<Routine>()
         setRoutines(routines)
         tab.add(name, selector)
@@ -18,7 +17,7 @@ abstract class AutoSelector(tab: ShuffleboardTab, routines: Array<Routine>, name
 
     public fun getSelectedRoutine(): Routine = selector.getSelected()
 
-    public fun setRoutines(routines: Array<Routine>){
-        routines.forEach({routine -> selector.addOption(routine.name, routine)})
+    public fun setRoutines(routines: Array<Routine>) {
+        routines.forEach({ routine -> selector.addOption(routine.name, routine) })
     }
 }
