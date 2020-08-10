@@ -1,14 +1,14 @@
-package org.team5419.fault.subsystems.drivetrain
+package org.team5419.berkeleyLib.subsystems.drivetrain
 
-import org.team5419.fault.hardware.LinearBerkeliumMotor
-import org.team5419.fault.math.geometry.Pose2d
-import org.team5419.fault.trajectory.followers.TrajectoryFollower
-import org.team5419.fault.trajectory.followers.TrajectoryFollowerOutput
+import org.team5419.berkeleyLib.hardware.LinearBerkeleyMotor
+import org.team5419.berkeleyLib.math.geometry.Pose2d
+import org.team5419.berkeleyLib.trajectory.followers.TrajectoryFollower
+import org.team5419.berkeleyLib.trajectory.followers.TrajectoryFollowerOutput
 
 interface ITrajectoryFollowingDrive {
 
-    val leftMasterMotor: LinearBerkeliumMotor
-    val rightMasterMotor: LinearBerkeliumMotor
+    val leftMasterMotor: LinearBerkeleyMotor
+    val rightMasterMotor: LinearBerkeleyMotor
 
     val trajectoryFollower: TrajectoryFollower
 

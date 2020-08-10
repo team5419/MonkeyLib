@@ -1,8 +1,8 @@
-package org.team5419.fault.math.geometry
+package org.team5419.berkeleyLib.math.geometry
 
-import org.team5419.fault.math.epsilonEquals
-import org.team5419.fault.math.interpolate
-import org.team5419.fault.math.lerp
+import org.team5419.berkeleyLib.math.epsilonEquals
+import org.team5419.berkeleyLib.math.interpolate
+import org.team5419.berkeleyLib.math.lerp
 
 data class Pose2dWithCurvature(
     val pose: Pose2d,

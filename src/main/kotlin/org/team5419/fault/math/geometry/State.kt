@@ -1,7 +1,7 @@
-package org.team5419.fault.math.geometry
+package org.team5419.berkeleyLib.math.geometry
 
-import org.team5419.fault.util.Interpolable
-import org.team5419.fault.util.CSVWritable
+import org.team5419.berkeleyLib.util.Interpolable
+import org.team5419.berkeleyLib.util.CSVWritable
 
 interface State<T> : Interpolable<T>, CSVWritable {
 

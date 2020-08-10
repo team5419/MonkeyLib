@@ -1,12 +1,12 @@
 package tests.math.units
 
 import org.junit.Test
-import org.team5419.fault.math.epsilonEquals
-import org.team5419.fault.math.units.hours
-import org.team5419.fault.math.units.inHours
-import org.team5419.fault.math.units.minutes
-import org.team5419.fault.math.units.seconds
-import org.team5419.fault.math.units.inMinutes
+import org.team5419.berkeleyLib.math.epsilonEquals
+import org.team5419.berkeleyLib.math.units.hours
+import org.team5419.berkeleyLib.math.units.inHours
+import org.team5419.berkeleyLib.math.units.minutes
+import org.team5419.berkeleyLib.math.units.seconds
+import org.team5419.berkeleyLib.math.units.inMinutes
 
 class TimeTest {
 

@@ -112,14 +112,14 @@ task install_hooks(dependsOn: 'tox')
 publishing {
     publications {
         library(MavenPublication) {
-            artifactId = 'fault'
+            artifactId = 'berkeleyLib'
             from components.java
             artifact sourcesJar
             artifact javadocJar
             pom {
-                name = 'Fault'
+                name = 'BerkeleyLib'
                 description = 'Commonly used utilities in FRC Team 5419\'s codebase'
-                url = 'https://github.com/team5419/fault'
+                url = 'https://github.com/team5419/BerkeleyLib'
             }
         }
     }

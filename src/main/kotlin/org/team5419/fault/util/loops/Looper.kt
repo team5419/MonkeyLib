@@ -1,4 +1,4 @@
-package org.team5419.fault.util.loops
+package org.team5419.berkeleyLib.util.loops
 
 import edu.wpi.first.wpilibj.Notifier
 import edu.wpi.first.wpilibj.Timer

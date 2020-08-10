@@ -1,23 +1,23 @@
-package org.team5419.fault.hardware.ctre
+package org.team5419.berkeleyLib.hardware.ctre
 
 import com.ctre.phoenix.motorcontrol.can.TalonSRX
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.SIKey
-import org.team5419.fault.math.units.Meter
-import org.team5419.fault.math.units.Second
-import org.team5419.fault.math.units.inMilliseconds
-import org.team5419.fault.math.units.Ampere
-import org.team5419.fault.math.units.inAmps
-import org.team5419.fault.math.units.derived.Radian
-import org.team5419.fault.math.units.native.NativeUnitModel
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.SIKey
+import org.team5419.berkeleyLib.math.units.Meter
+import org.team5419.berkeleyLib.math.units.Second
+import org.team5419.berkeleyLib.math.units.inMilliseconds
+import org.team5419.berkeleyLib.math.units.Ampere
+import org.team5419.berkeleyLib.math.units.inAmps
+import org.team5419.berkeleyLib.math.units.derived.Radian
+import org.team5419.berkeleyLib.math.units.native.NativeUnitModel
 
-typealias LinearBerkeleiumSRX = BerkeliumSRX<Meter>
-typealias AngularBerkeleiumSRX = BerkeliumSRX<Radian>
+typealias LinearBerkeleiumSRX = BerkeleySRX<Meter>
+typealias AngularBerkeleiumSRX = BerkeleySRX<Radian>
 
-class BerkeliumSRX<T : SIKey>(
+class BerkeleySRX<T : SIKey>(
     val talonSRX: TalonSRX,
     model: NativeUnitModel<T>
-) : CTREBerkeliumMotor<T>(talonSRX, model) {
+) : CTREBerkeleyMotor<T>(talonSRX, model) {
 
     constructor(id: Int, model: NativeUnitModel<T>): this(TalonSRX(id), model)
 

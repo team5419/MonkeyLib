@@ -1,23 +1,23 @@
 
-package org.team5419.fault.hardware
+package org.team5419.berkeleyLib.hardware
 
-import org.team5419.fault.math.units.Meter
-import org.team5419.fault.math.units.SIKey
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.derived.Acceleration
-import org.team5419.fault.math.units.derived.Radian
-import org.team5419.fault.math.units.derived.Velocity
-import org.team5419.fault.math.units.derived.Volt
+import org.team5419.berkeleyLib.math.units.Meter
+import org.team5419.berkeleyLib.math.units.SIKey
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.derived.Acceleration
+import org.team5419.berkeleyLib.math.units.derived.Radian
+import org.team5419.berkeleyLib.math.units.derived.Velocity
+import org.team5419.berkeleyLib.math.units.derived.Volt
 
-typealias LinearBerkeliumMotor = BerkeliumMotor<Meter>
-typealias AngularBerkeliumMotor = BerkeliumMotor<Radian>
+typealias LinearBerkeleyMotor = BerkeleyMotor<Meter>
+typealias AngularBerkeleyMotor = BerkeleyMotor<Radian>
 
-interface BerkeliumMotor<T : SIKey> {
+interface BerkeleyMotor<T : SIKey> {
 
     /**
      * The encoder attached to the motor
      */
-    val encoder: BerkeliumEncoder<T>
+    val encoder: BerkeleyEncoder<T>
     /**
      * The voltage output of the motor controller in volts
      */
@@ -53,7 +53,7 @@ interface BerkeliumMotor<T : SIKey> {
      */
     var useMotionProfileForPosition: Boolean
 
-    fun follow(motor: BerkeliumMotor<*>): Boolean
+    fun follow(motor: BerkeleyMotor<*>): Boolean
 
     /**
      * Sets the output [voltage] in volts and [arbitraryFeedForward] in volts

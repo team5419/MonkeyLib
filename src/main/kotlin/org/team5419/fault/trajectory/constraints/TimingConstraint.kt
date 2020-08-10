@@ -1,4 +1,4 @@
-package org.team5419.fault.trajectory.constraints
+package org.team5419.berkeleyLib.trajectory.constraints
 
 interface TimingConstraint<S> {
     fun getMaxVelocity(state: S): Double

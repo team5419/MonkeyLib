@@ -1,14 +1,14 @@
-package org.team5419.fault.math.geometry
+package org.team5419.berkeleyLib.math.geometry
 
-import org.team5419.fault.math.epsilonEquals
-import org.team5419.fault.math.kEpsilon
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.derived.Radian
-import org.team5419.fault.math.units.derived.cos
-import org.team5419.fault.math.units.derived.sin
-import org.team5419.fault.math.units.derived.radians
-import org.team5419.fault.math.units.derived.inDegrees
-// import org.team5419.fault.math.units.derived.radians
+import org.team5419.berkeleyLib.math.epsilonEquals
+import org.team5419.berkeleyLib.math.kEpsilon
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.derived.Radian
+import org.team5419.berkeleyLib.math.units.derived.cos
+import org.team5419.berkeleyLib.math.units.derived.sin
+import org.team5419.berkeleyLib.math.units.derived.radians
+import org.team5419.berkeleyLib.math.units.derived.inDegrees
+// import org.team5419.berkeleyLib.math.units.derived.radians
 
 @Suppress("EqualsWithHashCodeExist")
 class Rotation2d {

@@ -1,6 +1,6 @@
-package org.team5419.fault.input
+package org.team5419.berkeleyLib.input
 
-import org.team5419.fault.util.Source
+import org.team5419.berkeleyLib.util.Source
 
 typealias DriveSignalSource = Source<DriveSignal>
 

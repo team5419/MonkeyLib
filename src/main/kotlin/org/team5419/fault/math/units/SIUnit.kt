@@ -1,11 +1,11 @@
 @file:SuppressWarnings("TopLevelPropertyNaming", "TooManyFunctions")
-package org.team5419.fault.math.units
+package org.team5419.berkeleyLib.math.units
 
-import org.team5419.fault.math.epsilonEquals
-import org.team5419.fault.math.lerp
-import org.team5419.fault.math.units.derived.Ohm
-import org.team5419.fault.math.units.derived.Volt
-import org.team5419.fault.math.units.derived.Watt
+import org.team5419.berkeleyLib.math.epsilonEquals
+import org.team5419.berkeleyLib.math.lerp
+import org.team5419.berkeleyLib.math.units.derived.Ohm
+import org.team5419.berkeleyLib.math.units.derived.Volt
+import org.team5419.berkeleyLib.math.units.derived.Watt
 import kotlin.math.absoluteValue
 
 // SI Constants

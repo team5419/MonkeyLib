@@ -1,13 +1,13 @@
-package org.team5419.fault.auto
+package org.team5419.berkeleyLib.auto
 
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.Second
-import org.team5419.fault.math.units.seconds
-import org.team5419.fault.util.BooleanSource
-import org.team5419.fault.util.Source
-import org.team5419.fault.util.or
-import org.team5419.fault.util.time.ITimer
-import org.team5419.fault.util.time.WPITimer
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.Second
+import org.team5419.berkeleyLib.math.units.seconds
+import org.team5419.berkeleyLib.util.BooleanSource
+import org.team5419.berkeleyLib.util.Source
+import org.team5419.berkeleyLib.util.or
+import org.team5419.berkeleyLib.util.time.ITimer
+import org.team5419.berkeleyLib.util.time.WPITimer
 
 typealias NothingAction = Action
 

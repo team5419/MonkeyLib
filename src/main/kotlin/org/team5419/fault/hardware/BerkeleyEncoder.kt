@@ -1,12 +1,12 @@
-package org.team5419.fault.hardware
+package org.team5419.berkeleyLib.hardware
 
-import org.team5419.fault.math.units.SIKey
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.derived.Velocity
-import org.team5419.fault.math.units.native.NativeUnit
-import org.team5419.fault.math.units.native.NativeUnitVelocity
+import org.team5419.berkeleyLib.math.units.SIKey
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.derived.Velocity
+import org.team5419.berkeleyLib.math.units.native.NativeUnit
+import org.team5419.berkeleyLib.math.units.native.NativeUnitVelocity
 
-interface BerkeliumEncoder<T : SIKey> {
+interface BerkeleyEncoder<T : SIKey> {
 
     /**
      * The velocity of the encoder in [T]/s

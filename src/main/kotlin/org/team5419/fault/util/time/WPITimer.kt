@@ -1,7 +1,7 @@
-package org.team5419.fault.util.time
+package org.team5419.berkeleyLib.util.time
 
 import edu.wpi.first.wpilibj.Timer
-import org.team5419.fault.math.units.seconds
+import org.team5419.berkeleyLib.math.units.seconds
 
 public class WPITimer(timer: Timer = Timer()) : ITimer {
 

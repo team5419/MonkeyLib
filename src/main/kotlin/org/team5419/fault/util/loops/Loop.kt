@@ -1,4 +1,4 @@
-package org.team5419.fault.util.loops
+package org.team5419.berkeleyLib.util.loops
 
 public interface Loop {
 

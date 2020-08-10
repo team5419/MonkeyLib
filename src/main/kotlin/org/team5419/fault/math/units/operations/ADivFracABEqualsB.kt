@@ -6,10 +6,10 @@
  * Copyright 2019, Green Hope Falcons
  */
 
-package org.team5419.fault.math.units.operations
+package org.team5419.berkeleyLib.math.units.operations
 
-import org.team5419.fault.math.units.Frac
-import org.team5419.fault.math.units.SIKey
-import org.team5419.fault.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.Frac
+import org.team5419.berkeleyLib.math.units.SIKey
+import org.team5419.berkeleyLib.math.units.SIUnit
 
 operator fun <A : SIKey, B : SIKey> SIUnit<A>.div(other: SIUnit<Frac<A, B>>) = SIUnit<B>(value.div(other.value))

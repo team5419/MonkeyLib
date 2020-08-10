@@ -1,7 +1,7 @@
-package org.team5419.fault.math.pid
+package org.team5419.berkeleyLib.math.pid
 
-import org.team5419.fault.math.kEpsilon
-import org.team5419.fault.util.DoubleSource
+import org.team5419.berkeleyLib.math.kEpsilon
+import org.team5419.berkeleyLib.util.DoubleSource
 import kotlin.math.absoluteValue
 
 // adapted from:

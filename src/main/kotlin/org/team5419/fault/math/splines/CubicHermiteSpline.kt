@@ -1,9 +1,9 @@
-package org.team5419.fault.math.splines
+package org.team5419.berkeleyLib.math.splines
 
-import org.team5419.fault.math.geometry.Vector2d
-import org.team5419.fault.math.geometry.Rotation2d
-import org.team5419.fault.math.geometry.Pose2d
-import org.team5419.fault.math.units.meters
+import org.team5419.berkeleyLib.math.geometry.Vector2d
+import org.team5419.berkeleyLib.math.geometry.Rotation2d
+import org.team5419.berkeleyLib.math.geometry.Pose2d
+import org.team5419.berkeleyLib.math.units.meters
 
 @SuppressWarnings("MagicNumber")
 class CubicHermiteSpline(p0: Vector2d, h0: Rotation2d, p1: Vector2d, h1: Rotation2d) : Spline() {

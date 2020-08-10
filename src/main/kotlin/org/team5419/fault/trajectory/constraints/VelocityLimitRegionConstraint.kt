@@ -1,9 +1,9 @@
-package org.team5419.fault.trajectory.constraints
+package org.team5419.berkeleyLib.trajectory.constraints
 
-import org.team5419.fault.math.geometry.Pose2dWithCurvature
-import org.team5419.fault.math.geometry.Rectangle2d
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.derived.LinearVelocity
+import org.team5419.berkeleyLib.math.geometry.Pose2dWithCurvature
+import org.team5419.berkeleyLib.math.geometry.Rectangle2d
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.derived.LinearVelocity
 
 public class VelocityLimitRegionConstraint constructor(
     private val region: Rectangle2d,

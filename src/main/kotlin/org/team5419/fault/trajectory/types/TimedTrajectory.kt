@@ -1,17 +1,17 @@
 @file:Suppress("ConstructorParameterNaming")
-package org.team5419.fault.trajectory.types
+package org.team5419.berkeleyLib.trajectory.types
 
-import org.team5419.fault.math.epsilonEquals
-import org.team5419.fault.trajectory.TrajectoryIterator
-import org.team5419.fault.math.geometry.State
-import org.team5419.fault.math.lerp
-import org.team5419.fault.math.geometry.Pose2dWithCurvature
-import org.team5419.fault.math.geometry.Pose2d
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.Second
-import org.team5419.fault.math.units.derived.LinearAcceleration
-import org.team5419.fault.math.units.derived.LinearVelocity
-import org.team5419.fault.math.units.operations.times
+import org.team5419.berkeleyLib.math.epsilonEquals
+import org.team5419.berkeleyLib.trajectory.TrajectoryIterator
+import org.team5419.berkeleyLib.math.geometry.State
+import org.team5419.berkeleyLib.math.lerp
+import org.team5419.berkeleyLib.math.geometry.Pose2dWithCurvature
+import org.team5419.berkeleyLib.math.geometry.Pose2d
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.Second
+import org.team5419.berkeleyLib.math.units.derived.LinearAcceleration
+import org.team5419.berkeleyLib.math.units.derived.LinearVelocity
+import org.team5419.berkeleyLib.math.units.operations.times
 
 class TimedTrajectory<S : State<S>>(
     override val points: List<TimedEntry<S>>,

@@ -1,4 +1,4 @@
-package org.team5419.fault.math
+package org.team5419.berkeleyLib.math
 
 import kotlin.math.PI
 

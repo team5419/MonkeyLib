@@ -1,12 +1,12 @@
-package org.team5419.fault.hardware
+package org.team5419.berkeleyLib.hardware
 
 import edu.wpi.first.networktables.NetworkTableInstance
-import org.team5419.fault.math.geometry.Rotation2d
-import org.team5419.fault.math.units.derived.tan
-import org.team5419.fault.math.units.derived.degrees
-import org.team5419.fault.math.units.Meter
-import org.team5419.fault.math.units.inches
-import org.team5419.fault.math.units.SIUnit
+import org.team5419.berkeleyLib.math.geometry.Rotation2d
+import org.team5419.berkeleyLib.math.units.derived.tan
+import org.team5419.berkeleyLib.math.units.derived.degrees
+import org.team5419.berkeleyLib.math.units.Meter
+import org.team5419.berkeleyLib.math.units.inches
+import org.team5419.berkeleyLib.math.units.SIUnit
 
 import kotlin.math.PI
 import kotlin.math.asin

@@ -1,12 +1,12 @@
-package org.team5419.fault.auto
+package org.team5419.berkeleyLib.auto
 
-import org.team5419.fault.trajectory.types.Trajectory
-import org.team5419.fault.trajectory.types.TimedEntry
-import org.team5419.fault.math.geometry.Pose2dWithCurvature
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.Second
-import org.team5419.fault.subsystems.drivetrain.AbstractTankDrive
-import org.team5419.fault.trajectory.followers.TrajectoryFollower
+import org.team5419.berkeleyLib.trajectory.types.Trajectory
+import org.team5419.berkeleyLib.trajectory.types.TimedEntry
+import org.team5419.berkeleyLib.math.geometry.Pose2dWithCurvature
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.Second
+import org.team5419.berkeleyLib.subsystems.drivetrain.AbstractTankDrive
+import org.team5419.berkeleyLib.trajectory.followers.TrajectoryFollower
 
 public class DriveTrajectoryAction(
     private val drivetrain: AbstractTankDrive,

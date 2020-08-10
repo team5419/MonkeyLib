@@ -1,16 +1,16 @@
-package org.team5419.fault
+package org.team5419.berkeleyLib
 
 import edu.wpi.first.hal.FRCNetComm
 import edu.wpi.first.hal.HAL
 import edu.wpi.first.wpilibj.RobotBase
 import edu.wpi.first.wpilibj.TimedRobot
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.Second
-import org.team5419.fault.subsystems.Subsystem
-import org.team5419.fault.subsystems.SubsystemManager
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.Second
+import org.team5419.berkeleyLib.subsystems.Subsystem
+import org.team5419.berkeleyLib.subsystems.SubsystemManager
 
 @Suppress("TooManyFunctions")
-abstract class BerkeliumRobot(period: SIUnit<Second> = SIUnit<Second>(0.05)) {
+abstract class BerkeleyRobot(period: SIUnit<Second> = SIUnit<Second>(0.05)) {
 
     protected val wrappedValue = WpiTimedRobot(period.value)
 
@@ -23,48 +23,48 @@ abstract class BerkeliumRobot(period: SIUnit<Second> = SIUnit<Second>(0.05)) {
         }
 
         override fun robotInit() {
-            this@BerkeliumRobot.robotInit()
+            this@BerkeleyRobot.robotInit()
             SubsystemManager.init()
         }
 
         override fun autonomousInit() {
             SubsystemManager.autoReset()
-            this@BerkeliumRobot.autonomousInit()
+            this@BerkeleyRobot.autonomousInit()
         }
 
         override fun teleopInit() {
             SubsystemManager.teleopReset()
-            this@BerkeliumRobot.teleopInit()
+            this@BerkeleyRobot.teleopInit()
         }
 
         override fun disabledInit() {
             SubsystemManager.zeroOutputs()
-            this@BerkeliumRobot.disabledInit()
+            this@BerkeleyRobot.disabledInit()
         }
 
         override fun testInit() {
-            this@BerkeliumRobot.testInit()
+            this@BerkeleyRobot.testInit()
         }
 
         override fun robotPeriodic() {
-            this@BerkeliumRobot.robotPeriodic()
+            this@BerkeleyRobot.robotPeriodic()
             if (!isDisabled) SubsystemManager.periodic()
         }
 
         override fun autonomousPeriodic() {
-            this@BerkeliumRobot.autonomousPeriodic()
+            this@BerkeleyRobot.autonomousPeriodic()
         }
 
         override fun teleopPeriodic() {
-            this@BerkeliumRobot.teleopPeriodic()
+            this@BerkeleyRobot.teleopPeriodic()
         }
 
         override fun disabledPeriodic() {
-            this@BerkeliumRobot.disabledPeriodic()
+            this@BerkeleyRobot.disabledPeriodic()
         }
 
         override fun testPeriodic() {
-            this@BerkeliumRobot.testPeriodic()
+            this@BerkeleyRobot.testPeriodic()
         }
     }
 

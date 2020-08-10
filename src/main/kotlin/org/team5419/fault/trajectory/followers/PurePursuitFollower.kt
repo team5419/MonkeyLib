@@ -1,17 +1,17 @@
-package org.team5419.fault.trajectory.followers
+package org.team5419.berkeleyLib.trajectory.followers
 
-import org.team5419.fault.trajectory.TrajectoryIterator
-import org.team5419.fault.trajectory.types.TimedEntry
+import org.team5419.berkeleyLib.trajectory.TrajectoryIterator
+import org.team5419.berkeleyLib.trajectory.types.TimedEntry
 
-import org.team5419.fault.math.geometry.Pose2d
-import org.team5419.fault.math.geometry.Pose2dWithCurvature
-import org.team5419.fault.math.geometry.Vector2
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.Second
-import org.team5419.fault.math.units.Meter
-import org.team5419.fault.math.units.inches
-import org.team5419.fault.math.units.seconds
-import org.team5419.fault.math.units.meters
+import org.team5419.berkeleyLib.math.geometry.Pose2d
+import org.team5419.berkeleyLib.math.geometry.Pose2dWithCurvature
+import org.team5419.berkeleyLib.math.geometry.Vector2
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.Second
+import org.team5419.berkeleyLib.math.units.Meter
+import org.team5419.berkeleyLib.math.units.inches
+import org.team5419.berkeleyLib.math.units.seconds
+import org.team5419.berkeleyLib.math.units.meters
 
 import kotlin.math.pow
 

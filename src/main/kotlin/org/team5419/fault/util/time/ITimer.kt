@@ -1,7 +1,7 @@
-package org.team5419.fault.util.time
+package org.team5419.berkeleyLib.util.time
 
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.Second
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.Second
 /**
 * Timer abstraction layer to allow unit testing
 */

@@ -1,11 +1,11 @@
 
-package org.team5419.fault.math.geometry
+package org.team5419.berkeleyLib.math.geometry
 
-import org.team5419.fault.math.epsilonEquals
-import org.team5419.fault.math.units.meters
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.SIKey
-import org.team5419.fault.math.units.Meter
+import org.team5419.berkeleyLib.math.epsilonEquals
+import org.team5419.berkeleyLib.math.units.meters
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.SIKey
+import org.team5419.berkeleyLib.math.units.Meter
 import kotlin.math.hypot
 
 fun Rotation2d.toTranslation() = Vector2(cos.meters, sin.meters)

@@ -4,13 +4,13 @@ import org.junit.Test
 import org.junit.Assert.assertTrue
 import org.junit.Assert.assertEquals
 
-import org.team5419.fault.math.geometry.Vector2
-import org.team5419.fault.math.geometry.Pose2d
-import org.team5419.fault.math.splines.FunctionalQuadraticSpline
+import org.team5419.berkeleyLib.math.geometry.Vector2
+import org.team5419.berkeleyLib.math.geometry.Pose2d
+import org.team5419.berkeleyLib.math.splines.FunctionalQuadraticSpline
 
-import org.team5419.fault.math.splines.QuinticHermiteSpline
-import org.team5419.fault.math.units.derived.degrees
-import org.team5419.fault.math.units.meters
+import org.team5419.berkeleyLib.math.splines.QuinticHermiteSpline
+import org.team5419.berkeleyLib.math.units.derived.degrees
+import org.team5419.berkeleyLib.math.units.meters
 
 class QuinticHermiteOptimizerTest {
 

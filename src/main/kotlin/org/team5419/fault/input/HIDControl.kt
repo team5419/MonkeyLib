@@ -1,6 +1,6 @@
-package org.team5419.fault.input
+package org.team5419.berkeleyLib.input
 
-import org.team5419.fault.auto.Action
+import org.team5419.berkeleyLib.auto.Action
 import kotlin.math.absoluteValue
 
 typealias HIDControlListener = () -> Unit

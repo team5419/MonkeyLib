@@ -1,7 +1,7 @@
-package org.team5419.fault.trajectory.types
+package org.team5419.berkeleyLib.trajectory.types
 
-import org.team5419.fault.math.geometry.State
-import org.team5419.fault.trajectory.TrajectoryIterator
+import org.team5419.berkeleyLib.math.geometry.State
+import org.team5419.berkeleyLib.trajectory.TrajectoryIterator
 
 interface Trajectory<U : Comparable<U>, S : State<S>> {
     val points: List<S>

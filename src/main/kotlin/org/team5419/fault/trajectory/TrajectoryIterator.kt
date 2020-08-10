@@ -1,8 +1,8 @@
-package org.team5419.fault.trajectory
+package org.team5419.berkeleyLib.trajectory
 
-import org.team5419.fault.math.geometry.State
-import org.team5419.fault.trajectory.types.Trajectory
-import org.team5419.fault.trajectory.types.TrajectorySamplePoint
+import org.team5419.berkeleyLib.math.geometry.State
+import org.team5419.berkeleyLib.trajectory.types.Trajectory
+import org.team5419.berkeleyLib.trajectory.types.TrajectorySamplePoint
 
 abstract class TrajectoryIterator<U : Comparable<U>, S : State<S>>(
     val trajectory: Trajectory<U, S>

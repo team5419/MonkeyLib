@@ -1,15 +1,15 @@
-package org.team5419.fault.trajectory.followers
+package org.team5419.berkeleyLib.trajectory.followers
 
-import org.team5419.fault.trajectory.TrajectoryIterator
-import org.team5419.fault.trajectory.types.TimedEntry
-import org.team5419.fault.math.geometry.Pose2dWithCurvature
-import org.team5419.fault.math.geometry.Pose2d
+import org.team5419.berkeleyLib.trajectory.TrajectoryIterator
+import org.team5419.berkeleyLib.trajectory.types.TimedEntry
+import org.team5419.berkeleyLib.math.geometry.Pose2dWithCurvature
+import org.team5419.berkeleyLib.math.geometry.Pose2d
 
-import org.team5419.fault.math.epsilonEquals
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.Second
-import org.team5419.fault.math.units.operations.times
-import org.team5419.fault.math.units.operations.div
+import org.team5419.berkeleyLib.math.epsilonEquals
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.Second
+import org.team5419.berkeleyLib.math.units.operations.times
+import org.team5419.berkeleyLib.math.units.operations.div
 
 import kotlin.math.sqrt
 import kotlin.math.sin

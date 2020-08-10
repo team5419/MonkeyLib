@@ -1,7 +1,7 @@
 package tests.util
 
 import org.junit.Test
-import org.team5419.fault.util.MovingAverageFilter
+import org.team5419.berkeleyLib.util.MovingAverageFilter
 
 class MovingAverageFilterTest {
 

@@ -1,8 +1,8 @@
-package org.team5419.fault.math.units.derived
+package org.team5419.berkeleyLib.math.units.derived
 
-import org.team5419.fault.math.geometry.Rotation2d
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.Unitless
+import org.team5419.berkeleyLib.math.geometry.Rotation2d
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.Unitless
 
 typealias Radian = Unitless
 

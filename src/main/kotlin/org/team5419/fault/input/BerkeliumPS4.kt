@@ -1,5 +1,5 @@
 @file:Suppress("MatchingDeclarationName")
-package org.team5419.fault.input
+package org.team5419.berkeleyLib.input
 
 import edu.wpi.first.wpilibj.GenericHID
 import edu.wpi.first.wpilibj.Joystick

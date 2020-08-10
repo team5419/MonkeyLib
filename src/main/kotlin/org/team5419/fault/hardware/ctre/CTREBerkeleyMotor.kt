@@ -1,37 +1,37 @@
-package org.team5419.fault.hardware.ctre
+package org.team5419.berkeleyLib.hardware.ctre
 
 import com.ctre.phoenix.motorcontrol.IMotorController
 import com.ctre.phoenix.motorcontrol.ControlMode
 import com.ctre.phoenix.motorcontrol.DemandType
 import com.ctre.phoenix.motorcontrol.NeutralMode
 
-import org.team5419.fault.hardware.AbstractBerkeliumMotor
-import org.team5419.fault.hardware.BerkeliumMotor
-import org.team5419.fault.math.units.SIKey
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.derived.Acceleration
-import org.team5419.fault.math.units.derived.Velocity
-import org.team5419.fault.math.units.derived.Volt
-import org.team5419.fault.math.units.derived.volts
-import org.team5419.fault.math.units.native.NativeUnitModel
-import org.team5419.fault.math.units.native.inNativeUnitsPer100msPerSecond
-import org.team5419.fault.math.units.native.nativeUnitsPer100ms
-import org.team5419.fault.math.units.native.toNativeUnitVelocity
-import org.team5419.fault.math.units.operations.times
-import org.team5419.fault.math.units.operations.div
-import org.team5419.fault.math.units.unitlessValue
+import org.team5419.berkeleyLib.hardware.AbstractBerkeleyMotor
+import org.team5419.berkeleyLib.hardware.BerkeleyMotor
+import org.team5419.berkeleyLib.math.units.SIKey
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.derived.Acceleration
+import org.team5419.berkeleyLib.math.units.derived.Velocity
+import org.team5419.berkeleyLib.math.units.derived.Volt
+import org.team5419.berkeleyLib.math.units.derived.volts
+import org.team5419.berkeleyLib.math.units.native.NativeUnitModel
+import org.team5419.berkeleyLib.math.units.native.inNativeUnitsPer100msPerSecond
+import org.team5419.berkeleyLib.math.units.native.nativeUnitsPer100ms
+import org.team5419.berkeleyLib.math.units.native.toNativeUnitVelocity
+import org.team5419.berkeleyLib.math.units.operations.times
+import org.team5419.berkeleyLib.math.units.operations.div
+import org.team5419.berkeleyLib.math.units.unitlessValue
 import kotlin.math.roundToInt
 
 import kotlin.properties.Delegates
 
-abstract class CTREBerkeliumMotor<T : SIKey> internal constructor(
+abstract class CTREBerkeleyMotor<T : SIKey> internal constructor(
     val motorController: IMotorController,
     val model: NativeUnitModel<T>
-) : AbstractBerkeliumMotor<T>() {
+) : AbstractBerkeleyMotor<T>() {
 
     private var mLastDemand = Demand(ControlMode.Disabled, 0.0, DemandType.Neutral, 0.0)
 
-    override val encoder = CTREBerkeliumEncoder(motorController, 0, model)
+    override val encoder = CTREBerkeleyEncoder(motorController, 0, model)
 
     override val voltageOutput: SIUnit<Volt>
         get() = motorController.motorOutputVoltage.volts
@@ -113,8 +113,8 @@ abstract class CTREBerkeliumMotor<T : SIKey> internal constructor(
         }
     }
 
-    override fun follow(motor: BerkeliumMotor<*>): Boolean =
-            if (motor is CTREBerkeliumMotor<*>) {
+    override fun follow(motor: BerkeleyMotor<*>): Boolean =
+            if (motor is CTREBerkeleyMotor<*>) {
                 motorController.follow(motor.motorController)
                 true
             } else {

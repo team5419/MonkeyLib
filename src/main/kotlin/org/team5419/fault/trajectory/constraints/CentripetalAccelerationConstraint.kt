@@ -1,8 +1,8 @@
-package org.team5419.fault.trajectory.constraints
+package org.team5419.berkeleyLib.trajectory.constraints
 
-import org.team5419.fault.math.geometry.Pose2dWithCurvature
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.derived.LinearAcceleration
+import org.team5419.berkeleyLib.math.geometry.Pose2dWithCurvature
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.derived.LinearAcceleration
 
 import kotlin.math.absoluteValue
 import kotlin.math.sqrt

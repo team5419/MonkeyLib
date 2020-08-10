@@ -1,4 +1,4 @@
-package org.team5419.fault.auto
+package org.team5419.berkeleyLib.auto
 
 enum class GroupType { Parallel, Serial }
 

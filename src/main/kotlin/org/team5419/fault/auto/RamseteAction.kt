@@ -1,18 +1,18 @@
-package org.team5419.fault.auto
+package org.team5419.berkeleyLib.auto
 
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.Meter
-import org.team5419.fault.math.units.meters
-import org.team5419.fault.math.units.inMeters
-import org.team5419.fault.math.units.seconds
-import org.team5419.fault.math.units.inSeconds
-import org.team5419.fault.math.units.derived.LinearVelocity
-import org.team5419.fault.math.units.derived.velocity
-import org.team5419.fault.math.units.derived.LinearAcceleration
-import org.team5419.fault.math.units.derived.Volt
-import org.team5419.fault.math.units.derived.volts
-import org.team5419.fault.math.geometry.Vector2
-import org.team5419.fault.subsystems.drivetrain.AbstractTankDrive
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.Meter
+import org.team5419.berkeleyLib.math.units.meters
+import org.team5419.berkeleyLib.math.units.inMeters
+import org.team5419.berkeleyLib.math.units.seconds
+import org.team5419.berkeleyLib.math.units.inSeconds
+import org.team5419.berkeleyLib.math.units.derived.LinearVelocity
+import org.team5419.berkeleyLib.math.units.derived.velocity
+import org.team5419.berkeleyLib.math.units.derived.LinearAcceleration
+import org.team5419.berkeleyLib.math.units.derived.Volt
+import org.team5419.berkeleyLib.math.units.derived.volts
+import org.team5419.berkeleyLib.math.geometry.Vector2
+import org.team5419.berkeleyLib.subsystems.drivetrain.AbstractTankDrive
 import edu.wpi.first.wpilibj.controller.RamseteController
 import edu.wpi.first.wpilibj.controller.SimpleMotorFeedforward
 import edu.wpi.first.wpilibj.geometry.Pose2d
@@ -24,7 +24,7 @@ import edu.wpi.first.wpilibj.trajectory.TrajectoryConfig
 import edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator
 import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveVoltageConstraint
 import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveKinematicsConstraint
-import org.team5419.fault.math.units.Second
+import org.team5419.berkeleyLib.math.units.Second
 
 // refrences:
 // https://github.com/wpilibsuite/allwpilib/blob/master/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/RamseteCommand.java
@@ -33,11 +33,11 @@ import org.team5419.fault.math.units.Second
 public class RamseteAction(
     val drivetrain: AbstractTankDrive,
 
-    val startingPose: org.team5419.fault.math.geometry.Pose2d,
+    val startingPose: org.team5419.berkeleyLib.math.geometry.Pose2d,
 
     val intermidatePose: Array<Vector2<Meter>>,
 
-    val finalPose: org.team5419.fault.math.geometry.Pose2d,
+    val finalPose: org.team5419.berkeleyLib.math.geometry.Pose2d,
 
     val maxVelocity: SIUnit<LinearVelocity>,
     val maxAcceleration: SIUnit<LinearAcceleration>,

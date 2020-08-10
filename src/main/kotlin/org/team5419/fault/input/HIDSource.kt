@@ -1,8 +1,8 @@
-package org.team5419.fault.input
+package org.team5419.berkeleyLib.input
 
 import edu.wpi.first.wpilibj.GenericHID
-import org.team5419.fault.util.BooleanSource
-import org.team5419.fault.util.Source
+import org.team5419.berkeleyLib.util.BooleanSource
+import org.team5419.berkeleyLib.util.Source
 
 interface HIDSource : Source<Double>
 

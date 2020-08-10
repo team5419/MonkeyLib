@@ -1,10 +1,10 @@
-package org.team5419.fault.subsystems.drivetrain
+package org.team5419.berkeleyLib.subsystems.drivetrain
 
-import org.team5419.fault.math.physics.DifferentialDrive
-import org.team5419.fault.math.units.derived.velocity
-import org.team5419.fault.math.units.derived.volts
-import org.team5419.fault.math.units.meters
-import org.team5419.fault.trajectory.followers.TrajectoryFollowerOutput
+import org.team5419.berkeleyLib.math.physics.DifferentialDrive
+import org.team5419.berkeleyLib.math.units.derived.velocity
+import org.team5419.berkeleyLib.math.units.derived.volts
+import org.team5419.berkeleyLib.math.units.meters
+import org.team5419.berkeleyLib.trajectory.followers.TrajectoryFollowerOutput
 
 interface IDifferentialFollowerDrive : ITrajectoryFollowingDrive {
 

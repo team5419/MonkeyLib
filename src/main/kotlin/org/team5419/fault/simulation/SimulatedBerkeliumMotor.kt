@@ -1,28 +1,28 @@
-package org.team5419.fault.simulation
+package org.team5419.berkeleyLib.simulation
 
-import org.team5419.fault.hardware.BerkeliumEncoder
-import org.team5419.fault.hardware.BerkeliumMotor
-import org.team5419.fault.math.units.Meter
-import org.team5419.fault.math.units.SIKey
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.derived.Acceleration
-import org.team5419.fault.math.units.derived.Radian
-import org.team5419.fault.math.units.derived.Velocity
-import org.team5419.fault.math.units.derived.Volt
-import org.team5419.fault.math.units.native.NativeUnit
-import org.team5419.fault.math.units.native.NativeUnitVelocity
+import org.team5419.berkeleyLib.hardware.BerkeleyEncoder
+import org.team5419.berkeleyLib.hardware.BerkeleyMotor
+import org.team5419.berkeleyLib.math.units.Meter
+import org.team5419.berkeleyLib.math.units.SIKey
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.derived.Acceleration
+import org.team5419.berkeleyLib.math.units.derived.Radian
+import org.team5419.berkeleyLib.math.units.derived.Velocity
+import org.team5419.berkeleyLib.math.units.derived.Volt
+import org.team5419.berkeleyLib.math.units.native.NativeUnit
+import org.team5419.berkeleyLib.math.units.native.NativeUnitVelocity
 
-typealias LinearSimulatedBerkeleiumMotor = SimulatedBerkeliumMotor<Meter>
-typealias AngularSimulatedBerkeleiumMotor = SimulatedBerkeliumMotor<Radian>
+typealias LinearSimulatedBerkeleiumMotor = SimulatedBerkeleyMotor<Meter>
+typealias AngularSimulatedBerkeleiumMotor = SimulatedBerkeleyMotor<Radian>
 
-class SimulatedBerkeliumMotor<T : SIKey> : BerkeliumMotor<T> {
+class SimulatedBerkeleyMotor<T : SIKey> : BerkeleyMotor<T> {
 
     var velocity = SIUnit<Velocity<T>>(0.0)
     override val voltageOutput = SIUnit<Volt>(0.0)
 
-    override val encoder = object : BerkeliumEncoder<T> {
+    override val encoder = object : BerkeleyEncoder<T> {
         override val position: SIUnit<T> get() = SIUnit(0.0)
-        override val velocity: SIUnit<Velocity<T>> get() = this@SimulatedBerkeliumMotor.velocity
+        override val velocity: SIUnit<Velocity<T>> get() = this@SimulatedBerkeleyMotor.velocity
         override val rawPosition: SIUnit<NativeUnit> get() = SIUnit(position.value)
         override val rawVelocity: SIUnit<NativeUnitVelocity> get() = SIUnit(velocity.value)
 
@@ -38,7 +38,7 @@ class SimulatedBerkeliumMotor<T : SIKey> : BerkeliumMotor<T> {
         get() = TODO("not implemented")
         set(value) {}
 
-    override fun follow(motor: BerkeliumMotor<*>): Boolean {
+    override fun follow(motor: BerkeleyMotor<*>): Boolean {
         TODO("not implemented")
     }
 

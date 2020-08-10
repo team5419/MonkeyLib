@@ -1,4 +1,4 @@
-package org.team5419.fault.auto
+package org.team5419.berkeleyLib.auto
 
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser

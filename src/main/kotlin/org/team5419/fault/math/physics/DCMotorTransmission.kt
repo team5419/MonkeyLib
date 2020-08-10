@@ -1,6 +1,6 @@
-package org.team5419.fault.math.physics
+package org.team5419.berkeleyLib.math.physics
 
-import org.team5419.fault.math.kEpsilon
+import org.team5419.berkeleyLib.math.kEpsilon
 
 /*
  * Implementation from:

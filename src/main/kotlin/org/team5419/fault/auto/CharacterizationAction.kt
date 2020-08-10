@@ -1,13 +1,13 @@
 package org.team5419.frc2020.auto
 
-import org.team5419.fault.math.units.inMeters
+import org.team5419.berkeleyLib.math.units.inMeters
 import edu.wpi.first.wpilibj.Timer
 import edu.wpi.first.wpilibj.RobotController
 import edu.wpi.first.networktables.NetworkTableInstance
-import org.team5419.fault.subsystems.drivetrain.AbstractTankDrive
-import org.team5419.fault.auto.Action
-import org.team5419.fault.math.units.Second
-import org.team5419.fault.math.units.SIUnit
+import org.team5419.berkeleyLib.subsystems.drivetrain.AbstractTankDrive
+import org.team5419.berkeleyLib.auto.Action
+import org.team5419.berkeleyLib.math.units.Second
+import org.team5419.berkeleyLib.math.units.SIUnit
 
 public class CharacterizationAction(val drivetrain: AbstractTankDrive) : Action() {
 

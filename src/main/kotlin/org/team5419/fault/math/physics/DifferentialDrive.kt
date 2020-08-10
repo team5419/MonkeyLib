@@ -1,10 +1,10 @@
 @file:Suppress("MemberVisibilityCanBePrivate", "unused")
 
-package org.team5419.fault.math.physics
+package org.team5419.berkeleyLib.math.physics
 
-import org.team5419.fault.math.epsilonEquals
-import org.team5419.fault.math.kEpsilon
-import org.team5419.fault.util.CSVWritable
+import org.team5419.berkeleyLib.math.epsilonEquals
+import org.team5419.berkeleyLib.math.kEpsilon
+import org.team5419.berkeleyLib.util.CSVWritable
 import java.text.DecimalFormat
 import java.util.Arrays
 

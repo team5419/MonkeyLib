@@ -1,9 +1,9 @@
-package org.team5419.fault.math.units.native
+package org.team5419.berkeleyLib.math.units.native
 
-import org.team5419.fault.math.units.SIKey
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.derived.Acceleration
-import org.team5419.fault.math.units.derived.Velocity
+import org.team5419.berkeleyLib.math.units.SIKey
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.derived.Acceleration
+import org.team5419.berkeleyLib.math.units.derived.Velocity
 
 object NativeUnit : SIKey
 

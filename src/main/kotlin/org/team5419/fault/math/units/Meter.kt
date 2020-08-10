@@ -1,5 +1,5 @@
 @file:SuppressWarnings("TopLevelPropertyNaming", "TooManyFunctions")
-package org.team5419.fault.math.units
+package org.team5419.berkeleyLib.math.units
 
 object Meter : SIKey
 

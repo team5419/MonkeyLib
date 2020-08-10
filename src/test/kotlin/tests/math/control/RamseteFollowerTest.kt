@@ -2,19 +2,19 @@ package tests.math.control
 
 import org.junit.Test
 import org.knowm.xchart.XYChartBuilder
-import org.team5419.fault.math.geometry.Pose2d
-import org.team5419.fault.math.units.Meter
-import org.team5419.fault.math.units.inFeet
-import org.team5419.fault.math.units.inches
-import org.team5419.fault.math.units.feet
-import org.team5419.fault.math.units.seconds
-import org.team5419.fault.math.units.milliseconds
-import org.team5419.fault.math.units.inSeconds
+import org.team5419.berkeleyLib.math.geometry.Pose2d
+import org.team5419.berkeleyLib.math.units.Meter
+import org.team5419.berkeleyLib.math.units.inFeet
+import org.team5419.berkeleyLib.math.units.inches
+import org.team5419.berkeleyLib.math.units.feet
+import org.team5419.berkeleyLib.math.units.seconds
+import org.team5419.berkeleyLib.math.units.milliseconds
+import org.team5419.berkeleyLib.math.units.inSeconds
 
-import org.team5419.fault.math.units.derived.degrees
-import org.team5419.fault.simulation.SimulatedBerkeliumMotor
-import org.team5419.fault.simulation.SimulatedDifferentialDrive
-import org.team5419.fault.trajectory.followers.RamseteFollower
+import org.team5419.berkeleyLib.math.units.derived.degrees
+import org.team5419.berkeleyLib.simulation.SimulatedBerkeleyMotor
+import org.team5419.berkeleyLib.simulation.SimulatedDifferentialDrive
+import org.team5419.berkeleyLib.trajectory.followers.RamseteFollower
 import tests.math.splines.TrajectoryGeneratorTest
 import java.awt.Color
 import java.awt.Font
@@ -35,8 +35,8 @@ class RamseteFollowerTest {
 
         val drive = SimulatedDifferentialDrive(
                 TrajectoryGeneratorTest.drive,
-                SimulatedBerkeliumMotor<Meter>(),
-                SimulatedBerkeliumMotor<Meter>(),
+                SimulatedBerkeleyMotor<Meter>(),
+                SimulatedBerkeleyMotor<Meter>(),
                 ramseteTracker,
                 1.05
         )

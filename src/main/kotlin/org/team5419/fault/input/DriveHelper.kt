@@ -1,7 +1,7 @@
-package org.team5419.fault.input
+package org.team5419.berkeleyLib.input
 
-import org.team5419.fault.util.BooleanSource
-import org.team5419.fault.util.DoubleSource
+import org.team5419.berkeleyLib.util.BooleanSource
+import org.team5419.berkeleyLib.util.DoubleSource
 import kotlin.math.absoluteValue
 
 abstract class DriveHelper : DriveSignalSource {

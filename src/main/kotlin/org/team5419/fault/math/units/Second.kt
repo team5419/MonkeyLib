@@ -1,5 +1,5 @@
 @file:SuppressWarnings("TooManyFunctions")
-package org.team5419.fault.math.units
+package org.team5419.berkeleyLib.math.units
 
 object Second : SIKey
 

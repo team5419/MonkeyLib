@@ -1,18 +1,18 @@
 package tests.math.units
 
 import org.junit.Test
-import org.team5419.fault.math.epsilonEquals
-import org.team5419.fault.math.units.meters
-import org.team5419.fault.math.units.seconds
-import org.team5419.fault.math.units.unitlessValue
-import org.team5419.fault.math.units.inSeconds
-import org.team5419.fault.math.units.inMeters
-import org.team5419.fault.math.units.amps
-import org.team5419.fault.math.units.derived.inFeetPerMinute
-import org.team5419.fault.math.units.derived.inFeetPerSecond
-import org.team5419.fault.math.units.derived.volts
-import org.team5419.fault.math.units.operations.div
-import org.team5419.fault.math.units.operations.times
+import org.team5419.berkeleyLib.math.epsilonEquals
+import org.team5419.berkeleyLib.math.units.meters
+import org.team5419.berkeleyLib.math.units.seconds
+import org.team5419.berkeleyLib.math.units.unitlessValue
+import org.team5419.berkeleyLib.math.units.inSeconds
+import org.team5419.berkeleyLib.math.units.inMeters
+import org.team5419.berkeleyLib.math.units.amps
+import org.team5419.berkeleyLib.math.units.derived.inFeetPerMinute
+import org.team5419.berkeleyLib.math.units.derived.inFeetPerSecond
+import org.team5419.berkeleyLib.math.units.derived.volts
+import org.team5419.berkeleyLib.math.units.operations.div
+import org.team5419.berkeleyLib.math.units.operations.times
 
 class DerivedTests {
 

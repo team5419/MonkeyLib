@@ -1,14 +1,14 @@
 package tests.math.units
 
 import org.junit.Test
-import org.team5419.fault.math.epsilonEquals
-import org.team5419.fault.math.units.inches
-import org.team5419.fault.math.units.inInches
-import org.team5419.fault.math.units.meters
-import org.team5419.fault.math.units.milli
-import org.team5419.fault.math.units.centi
-import org.team5419.fault.math.units.inMillimeters
-import org.team5419.fault.math.units.inMeters
+import org.team5419.berkeleyLib.math.epsilonEquals
+import org.team5419.berkeleyLib.math.units.inches
+import org.team5419.berkeleyLib.math.units.inInches
+import org.team5419.berkeleyLib.math.units.meters
+import org.team5419.berkeleyLib.math.units.milli
+import org.team5419.berkeleyLib.math.units.centi
+import org.team5419.berkeleyLib.math.units.inMillimeters
+import org.team5419.berkeleyLib.math.units.inMeters
 
 class LengthTest {
 

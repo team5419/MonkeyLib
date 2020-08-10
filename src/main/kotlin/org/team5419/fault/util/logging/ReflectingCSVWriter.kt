@@ -1,11 +1,11 @@
-package org.team5419.fault.util.logging
+package org.team5419.berkeleyLib.util.logging
 
 import java.io.FileNotFoundException
 import java.io.PrintWriter
 import java.lang.reflect.Field
 import java.util.concurrent.ConcurrentLinkedDeque
 
-import org.team5419.fault.util.CSVWritable
+import org.team5419.berkeleyLib.util.CSVWritable
 
 class ReflectingCSVWriter<T>(filename: String, typeClass: Class<T>) {
     private val mLinesToWrite: ConcurrentLinkedDeque<String> = ConcurrentLinkedDeque()

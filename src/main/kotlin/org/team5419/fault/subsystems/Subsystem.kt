@@ -1,6 +1,6 @@
-package org.team5419.fault.subsystems
+package org.team5419.berkeleyLib.subsystems
 
-import org.team5419.fault.util.loops.ILooper
+import org.team5419.berkeleyLib.util.loops.ILooper
 import java.util.concurrent.atomic.AtomicLong
 
 object SubsystemManager {

@@ -1,7 +1,7 @@
-package org.team5419.fault.auto
+package org.team5419.berkeleyLib.auto
 
-import org.team5419.fault.math.units.Second
-import org.team5419.fault.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.Second
+import org.team5419.berkeleyLib.math.units.SIUnit
 
 abstract class ActionGroup internal constructor() : Action() {
     internal abstract val actions: List<Action>

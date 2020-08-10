@@ -1,7 +1,7 @@
-package org.team5419.fault.trajectory.types
+package org.team5419.berkeleyLib.trajectory.types
 
-import org.team5419.fault.trajectory.TrajectoryIterator
-import org.team5419.fault.math.geometry.State
+import org.team5419.berkeleyLib.trajectory.TrajectoryIterator
+import org.team5419.berkeleyLib.math.geometry.State
 
 class IndexedTrajectory<S : State<S>>(
     override val points: List<S>

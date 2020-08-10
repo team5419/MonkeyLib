@@ -1,11 +1,11 @@
-package org.team5419.fault.math.splines
+package org.team5419.berkeleyLib.math.splines
 
-import org.team5419.fault.math.geometry.Vector2d
-import org.team5419.fault.math.geometry.Rotation2d
-import org.team5419.fault.math.geometry.Pose2d
-import org.team5419.fault.math.units.meters
-import org.team5419.fault.math.units.operations.times
-import org.team5419.fault.math.units.operations.div
+import org.team5419.berkeleyLib.math.geometry.Vector2d
+import org.team5419.berkeleyLib.math.geometry.Rotation2d
+import org.team5419.berkeleyLib.math.geometry.Pose2d
+import org.team5419.berkeleyLib.math.units.meters
+import org.team5419.berkeleyLib.math.units.operations.times
+import org.team5419.berkeleyLib.math.units.operations.div
 
 // yes external contructors are disgusting. but they work
 @Suppress("FunctionNaming", "MagicNumber")

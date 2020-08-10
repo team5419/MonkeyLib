@@ -1,9 +1,9 @@
-package org.team5419.fault.auto
+package org.team5419.berkeleyLib.auto
 
-import org.team5419.fault.math.geometry.Pose2d
-import org.team5419.fault.math.geometry.Vector2
-import org.team5419.fault.math.units.derived.degrees
-import org.team5419.fault.math.units.meters
+import org.team5419.berkeleyLib.math.geometry.Pose2d
+import org.team5419.berkeleyLib.math.geometry.Vector2
+import org.team5419.berkeleyLib.math.units.derived.degrees
+import org.team5419.berkeleyLib.math.units.meters
 import java.util.concurrent.atomic.AtomicLong
 
 class Routine(

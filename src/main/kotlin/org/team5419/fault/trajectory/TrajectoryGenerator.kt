@@ -1,28 +1,28 @@
-package org.team5419.fault.trajectory
+package org.team5419.berkeleyLib.trajectory
 
-import org.team5419.fault.math.geometry.Pose2d
-import org.team5419.fault.math.geometry.Pose2dWithCurvature
-import org.team5419.fault.math.geometry.Vector2
-import org.team5419.fault.math.geometry.State
+import org.team5419.berkeleyLib.math.geometry.Pose2d
+import org.team5419.berkeleyLib.math.geometry.Pose2dWithCurvature
+import org.team5419.berkeleyLib.math.geometry.Vector2
+import org.team5419.berkeleyLib.math.geometry.State
 
-import org.team5419.fault.trajectory.constraints.TimingConstraint
-import org.team5419.fault.trajectory.types.TimedTrajectory
-import org.team5419.fault.trajectory.types.TimedEntry
-import org.team5419.fault.trajectory.types.IndexedTrajectory
-import org.team5419.fault.trajectory.types.DistanceTrajectory
+import org.team5419.berkeleyLib.trajectory.constraints.TimingConstraint
+import org.team5419.berkeleyLib.trajectory.types.TimedTrajectory
+import org.team5419.berkeleyLib.trajectory.types.TimedEntry
+import org.team5419.berkeleyLib.trajectory.types.IndexedTrajectory
+import org.team5419.berkeleyLib.trajectory.types.DistanceTrajectory
 
-import org.team5419.fault.math.splines.QuinticHermiteSpline
-import org.team5419.fault.math.splines.Spline
-import org.team5419.fault.math.splines.SplineGenerator
-import org.team5419.fault.math.units.inches
-import org.team5419.fault.math.units.Meter
-import org.team5419.fault.math.units.SIUnit
+import org.team5419.berkeleyLib.math.splines.QuinticHermiteSpline
+import org.team5419.berkeleyLib.math.splines.Spline
+import org.team5419.berkeleyLib.math.splines.SplineGenerator
+import org.team5419.berkeleyLib.math.units.inches
+import org.team5419.berkeleyLib.math.units.Meter
+import org.team5419.berkeleyLib.math.units.SIUnit
 
-import org.team5419.fault.math.units.derived.LinearAcceleration
-import org.team5419.fault.math.units.derived.LinearVelocity
-import org.team5419.fault.math.units.derived.Radian
-import org.team5419.fault.math.units.derived.degrees
-import org.team5419.fault.util.Oof
+import org.team5419.berkeleyLib.math.units.derived.LinearAcceleration
+import org.team5419.berkeleyLib.math.units.derived.LinearVelocity
+import org.team5419.berkeleyLib.math.units.derived.Radian
+import org.team5419.berkeleyLib.math.units.derived.degrees
+import org.team5419.berkeleyLib.util.Oof
 
 import kotlin.math.absoluteValue
 import kotlin.math.pow

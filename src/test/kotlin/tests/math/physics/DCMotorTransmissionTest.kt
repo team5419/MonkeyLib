@@ -3,7 +3,7 @@ package tests.math.physics
 import org.junit.Test
 import org.junit.Assert.assertEquals
 
-import org.team5419.fault.math.physics.DCMotorTransmission
+import org.team5419.berkeleyLib.math.physics.DCMotorTransmission
 
 class DCMotorTransmissionTest {
     val motor = DCMotorTransmission(1000.0, 0.5, 1.0)

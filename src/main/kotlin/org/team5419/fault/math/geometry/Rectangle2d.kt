@@ -1,16 +1,16 @@
-package org.team5419.fault.math.geometry
+package org.team5419.berkeleyLib.math.geometry
 
-import org.team5419.fault.math.epsilonEquals
-import org.team5419.fault.math.units.Meter
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.meters
-import org.team5419.fault.math.units.operations.div
-import org.team5419.fault.math.units.operations.times
-import org.team5419.fault.math.units.operations.div
+import org.team5419.berkeleyLib.math.epsilonEquals
+import org.team5419.berkeleyLib.math.units.Meter
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.meters
+import org.team5419.berkeleyLib.math.units.operations.div
+import org.team5419.berkeleyLib.math.units.operations.times
+import org.team5419.berkeleyLib.math.units.operations.div
 
 import kotlin.math.max
 import kotlin.math.min
-import org.team5419.fault.math.units.operations.div
+import org.team5419.berkeleyLib.math.units.operations.div
 
 @Suppress("FunctionName")
 fun Rectangle2d(

@@ -1,11 +1,11 @@
-package org.team5419.fault.trajectory.types
+package org.team5419.berkeleyLib.trajectory.types
 
-import org.team5419.fault.math.epsilonEquals
-import org.team5419.fault.math.geometry.State
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.Meter
-import org.team5419.fault.math.units.meters
-import org.team5419.fault.trajectory.TrajectoryIterator
+import org.team5419.berkeleyLib.math.epsilonEquals
+import org.team5419.berkeleyLib.math.geometry.State
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.Meter
+import org.team5419.berkeleyLib.math.units.meters
+import org.team5419.berkeleyLib.trajectory.TrajectoryIterator
 
 // distance and state
 class DistanceTrajectory<S : State<S>>(

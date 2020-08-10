@@ -1,20 +1,20 @@
-package org.team5419.fault.hardware.ctre
+package org.team5419.berkeleyLib.hardware.ctre
 
 import com.ctre.phoenix.motorcontrol.IMotorController
-import org.team5419.fault.hardware.AbstractBerkeliumEncoder
-import org.team5419.fault.math.units.SIKey
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.native.NativeUnit
-import org.team5419.fault.math.units.native.NativeUnitModel
-import org.team5419.fault.math.units.native.nativeUnits
-import org.team5419.fault.math.units.native.nativeUnitsPer100ms
+import org.team5419.berkeleyLib.hardware.AbstractBerkeleyEncoder
+import org.team5419.berkeleyLib.math.units.SIKey
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.native.NativeUnit
+import org.team5419.berkeleyLib.math.units.native.NativeUnitModel
+import org.team5419.berkeleyLib.math.units.native.nativeUnits
+import org.team5419.berkeleyLib.math.units.native.nativeUnitsPer100ms
 import kotlin.properties.Delegates
 
-class CTREBerkeliumEncoder<T : SIKey>(
+class CTREBerkeleyEncoder<T : SIKey>(
     val motorController: IMotorController,
     val pidIdx: Int = 0,
     model: NativeUnitModel<T>
-) : AbstractBerkeliumEncoder<T>(model) {
+) : AbstractBerkeleyEncoder<T>(model) {
     override val rawPosition get() =
         motorController.getSelectedSensorPosition(pidIdx).toDouble().nativeUnits
     override val rawVelocity get() =

@@ -2,7 +2,7 @@ package tests.math
 
 import org.junit.Test
 import org.junit.Assert.assertTrue
-import org.team5419.fault.math.epsilonEquals
+import org.team5419.berkeleyLib.math.epsilonEquals
 
 class EpsilonTest {
 

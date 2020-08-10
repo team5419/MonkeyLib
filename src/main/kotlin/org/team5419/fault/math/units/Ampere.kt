@@ -1,4 +1,4 @@
-package org.team5419.fault.math.units
+package org.team5419.berkeleyLib.math.units
 
 object Ampere : SIKey
 

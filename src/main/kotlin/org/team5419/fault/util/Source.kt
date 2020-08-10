@@ -1,5 +1,5 @@
 @file:Suppress("TooManyFunctions")
-package org.team5419.fault.util
+package org.team5419.berkeleyLib.util
 
 import kotlin.math.absoluteValue
 import kotlin.math.sign

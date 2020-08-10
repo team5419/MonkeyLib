@@ -1,11 +1,11 @@
-package org.team5419.fault.auto
+package org.team5419.berkeleyLib.auto
 
-import org.team5419.fault.math.units.Meter
-import org.team5419.fault.math.units.SIUnit
-import org.team5419.fault.math.units.derived.LinearVelocity
-import org.team5419.fault.math.units.derived.velocity
-import org.team5419.fault.math.units.inches
-import org.team5419.fault.subsystems.drivetrain.AbstractTankDrive
+import org.team5419.berkeleyLib.math.units.Meter
+import org.team5419.berkeleyLib.math.units.SIUnit
+import org.team5419.berkeleyLib.math.units.derived.LinearVelocity
+import org.team5419.berkeleyLib.math.units.derived.velocity
+import org.team5419.berkeleyLib.math.units.inches
+import org.team5419.berkeleyLib.subsystems.drivetrain.AbstractTankDrive
 import kotlin.math.absoluteValue
 
 class DriveStraightAction(

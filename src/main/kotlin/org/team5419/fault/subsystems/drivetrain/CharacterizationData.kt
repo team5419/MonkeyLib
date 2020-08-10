@@ -1,6 +1,6 @@
-package org.team5419.fault.subsystems.drivetrain
+package org.team5419.berkeleyLib.subsystems.drivetrain
 
-import org.team5419.fault.util.CSVWritable
+import org.team5419.berkeleyLib.util.CSVWritable
 
 data class CharacterizationData(
     val voltage: Double, // volts
